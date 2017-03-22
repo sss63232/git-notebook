@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-* [Chapter1](chapter1/README.md)
-    * [Section1.1](chapter1/section1.1.md)
-    * [Section1.2](chapter1/section1.2.md)
+* [Bootstrap](Bootstrap/README.md)
+    * [bootstrap](Bootstrap/bootstrap.md)
+    * [Responsive Design with Bootstrap Fluid Containers](Bootstrap/Responsive Design with Bootstrap Fluid Containers.md)
 * [Chapter2](chapter2/README.md)
 
