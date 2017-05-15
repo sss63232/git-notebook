@@ -19,6 +19,7 @@ function funname(param1,param2,.......paramX){
 }
 ```
 
+
 2. 建構式
 
 函式是個物件，所以也能像建立物件一樣來建立函式。
