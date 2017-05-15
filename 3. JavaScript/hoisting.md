@@ -20,9 +20,10 @@ function b(){
 
 hoisting 在JavaScript中，它會把定義的變項移到最前面先執行。
 
-結果當中並沒有出現任何的錯誤！因為它其實在程式一開始執行的時候，就已經把var a和function b(){....}這些宣告(declare)的變項都存在記憶體中了，但是還沒把值指定進去a這個變項當中，這使得a得到了undefined的結果（註：undefined在JavaScript並不是真正的undefined，它其實也是一個值(value)，而且是一個特殊值）。
+結果當中並沒有出現任何的錯誤！因為它其實在程式一開始執行的時候，就已經把var a 和function b(){....}這些宣告(declare)的變項都存在記憶體中了，但是還沒把值指定進去a這個變項當中，這使得 a 得到了 undefined的結果（註： undefined 在 JavaScript 並不是真正的 undefined，它其實也是一個值(value)，而且是一個特殊值）。
 
 ## 「宣告」與「給值」是分開的
+
 在我們定義變項的過程中，可以分成宣告(declaration)和給值(initialization)的兩個過程，只有declaration的內容會在逐行執行程式前先被執行並儲存在記憶體中(hoisted)；給值的內容則是在hoisted後，逐行執行程式時，才會被執行到。
 
 > JavaScript Declarations are Hoisted  
