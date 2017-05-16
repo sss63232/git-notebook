@@ -24,7 +24,7 @@ Grid : 2-dimensional layout solution
 
 ## Properties
 
-### for grid container
+### For grid container
 
 #### display
 
