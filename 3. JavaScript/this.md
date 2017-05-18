@@ -88,4 +88,99 @@ c.log();
 
 ![](https://1.bp.blogspot.com/-1OfgGOUInHo/VvOQmNfrzqI/AAAAAAAAjOw/-uCuOCpr_YIc2PpRhad8HQ8LyRqQuL9Rg/s640/9.png)
 
+進階：
 
+```javascript
+var c ={
+    name : "物件 c 的初始名字",
+    log: function(){
+        console.log(c.name); 
+
+        this.name = "第一次改的名字";
+        console.log(c.name);
+        console.log(this);
+
+        var setNewName = function(newName){
+            this.name = newName; // 重點: 這時候的 this 指的是 window !!!
+
+            console.log(this);
+            console.log(c.name);
+        }
+
+        setNewName("第二次改的名字");
+        console.log(this);
+    }
+}
+
+c.log();
+
+/*
+
+結果輸出：
+
+// 物件 c 的初始名字
+// 第一次改的名字
+// Object {name: "第一次改的名字", log: function}
+// 第一次改名字
+// Window {...}
+// Object {name: "第一次改的名字", log: function}
+
+*/
+```
+
+## 解法
+
+怎麼做來避免指稱到不同的物件呢？
+
+先把確定是本身的 this 存起來!
+
+```javascript
+
+var c ={
+    name : "物件 c 的初始名字",
+    log: function(){
+        this.name = "第一次改的名字";
+        console.log(c.name);
+        ////////////////
+        var self = this;
+        ////////////////
+        var setNewName = function(newName){
+            self.name = newName; // 重點: 這時候的 this 指的是 window !!!
+
+            console.log(this);
+            console.log(self);
+        }
+
+        setNewName("第二次改的名字");
+        console.log(c.name);
+    }
+}
+
+c.log();
+
+/*
+
+結果輸出：
+
+// 第一次改的名字
+// Window {...}
+// Object {name: "第一次改的名字", log: function}
+// 第二次改的名字
+
+*/
+
+```
+
+## Conclusion
+
+1. 在global environment 建立函式並呼叫 this，這時候 this 會指稱到 global object (window object)。
+
+2. 如果我們是在物件裡面建立函式，也就是方法（method）的情況時，這時候的 this 一般就會指稱到包含這個方法的物件（之所以說"一般"是因為除了上述bug的情況之外）。
+
+3. 碰到 method 中可能會有不知道this指稱到什麼的情況時，為了避免不必要的錯誤，我們可以在method中的最上面建立一個變數，去把它指定成this（var self = this）。
+
+4. 如果真的還是不知道那個情況下的this會指稱到什麼，就console.log出來看看吧！
+
+## 資料來源
+
+[[筆記] 談談JavaScript中的"this"和它的bug](https://pjchender.blogspot.tw/2016/03/javascriptthisbug.html)
