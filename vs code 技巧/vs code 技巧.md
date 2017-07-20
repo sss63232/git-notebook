@@ -18,6 +18,20 @@
 
 ## Ctrl + C 複製當前行或選中內容
 
+## 開啟命令行工具: `Ctrl + \`` 這個命令行工具就是 Windows 下的 cmd 或者 PowerShell。
+
+## 重命名變量: 選中變量名後按F2
+
+## 矩形框的鼠標選擇: 同時按住Shit和Alt並使用鼠標進行拖拽選擇 
+
+![](http://qingbob.com/images/vsc-tips/editingevolved_column-select.gif)
+
+## 選擇光標所在的整行: `Ctrl + I` 
+
+## 美化當前所有文檔中內容: `Shift + Alt + F`
+
+## 依次找出文中所有的當前選中的單詞: `Ctrl + D` 
+
 ## Alt + ↓ or ↑ 上下移動當前行
 
 ![](alt-up.gif)

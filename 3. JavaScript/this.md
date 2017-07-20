@@ -1,8 +1,13 @@
 # this
 
+## 大原則
+
+1. this 的是由所在函數的執行環境決定，也就是說要看函數是如何被調用的；
+1. 同一個函數每一次調用，this 都可能指向不同的對象;
+
 ## window object (global object)
 
-```javascript 
+```javascript
 console.log(this);
 
 // function statement
