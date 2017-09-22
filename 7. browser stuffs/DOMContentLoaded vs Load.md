@@ -1,8 +1,17 @@
 # DOMContentLoaded and Load 
-## DOMContentLoaded
+## DOMContentLoaded “網頁從空白到出現內容”
+
 DOMContentLoaded event fires when parsing of the current page is complete; 
 
-當一個 HTML 文檔被加載和解析完成後(不包含載入外部圖片或資源)，DOMContentLoaded 事件便會被觸發。
+當一個 HTML 文檔被加載和解析完成後(不包含載入外部圖片或資源)，JS（不包括動態插入的JS）執行完之後，才會觸發DOMContentLoaded事件。
+
+DOMContentLoaded事件本身不會等待CSS文件、圖片、iframe加載完成。
+
+The DOMContentLoaded event is firexd when the document has been 
+completely loaded and parsed, without waiting for stylesheets, images, 
+and subframes to finish loading
+
+Note: Stylesheet loads block script execution, so if you have a `<script>` after a `<link rel="stylesheet" ...>`, the page will not finish parsing – and DOMContentLoaded will not fire – until the stylesheet is loaded.
 
 ### 瀏覽器渲染原理
 ![](https://github.com/CompileYouth/front-end-study/raw/master/html/domcontentloaded/res/dcl-render-tree.png)
@@ -77,6 +86,9 @@ script 腳本載入完就執行，最後再執行剩下的 HTML 文檔。
 HTML 解析完畢後，DOMContentLoaded 觸發。而不需要額外等待 async 腳本執行、樣式表加載等。
 
 ## Load
+
+先觸發DOMContentLoaded事件，後觸發Load事件
+
 > the load event fires when all files have finished loading from all resources, including ads and images.
 
 當 HTML 文檔解析完成就會觸發 DOMContentLoaded，而所以資源加載完成之後，load 事件才會被觸發。
