@@ -1,4 +1,4 @@
-# audiosprite with howler.js
+# How to use audioSprite with Howler.js
 
 ## When to use them 
 
