@@ -56,10 +56,6 @@ function do_mission_one(do_mission_two) {
 do_mission_one(do_mission_two).then(function(do_mission_two){
   do_mission_two()
 });
-
-do_mission_two("1234").catch(function(error){
-  console.log(error);
-});
 ```
 ```javascript
 // 使用 ES5 語法

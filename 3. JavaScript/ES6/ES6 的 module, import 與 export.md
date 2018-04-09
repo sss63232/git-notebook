@@ -1,42 +1,89 @@
 # ES6 的 module, import 與 export
 
-## 匯出 funtion 基本用法
+## 沒有 default 的 export
+
+### export 多個 funtion 
 
 ```javascript
 // hello.js
+function Hello(){...}
+function HowOld(){...}
+class Person {...省略}
+class Vehicle {...省略}
+
+export {Hello, HowOld, Person, Vehicle};
+```
+
+### import
+
+export 沒有 default 時，
+
+import 必須要有大括號。
+
+```javascript
+import {Hello, HowOld, Person, Vehicle} from './hello.js';
+
+Hello();
+var david = new Person();
+```
+
+import 後要改變 module 名稱的話，
+
+必須要搭配 as 。
+
+```javascript
+import {Hello as alia1, HowOld, Person as alia2, Vehicle} from './hello.js';
+```
+
+要一次全部 import 的話用 `*` 搭配 as
+
+```javascript
+import * as Greeting from './hello.js';
+
+Greeting.Hello();
+var ben = new Greeting.Person();
+```
+## 有 default 的 export
+
+### 唯一的 export default 
+
+一支 js 檔案只可以有一個 default，
+
+```javascript
 export default const Hello = (name) => {
 	console.log(`Hello ${name}`);
 }
-
-// main.js
-import Hello from './hello';
-Hello('Peter');
-
-// 輸出：Hello Peter
-
-//////////// 匯出多個 funtion 
-// hello.js
-...
-export { Hello, HowOld };
-// main.js
-import { Hello, HowOld } from './hello';
-
-///////////// 搭配 as 用法
-// greet.js
-...
-export { Hello, HowOld };
-// main.js
-import * as Greeting from './greet';
-Greeting.Hello('Peter');
-// => Hello Peter
-Greeting.HowOld(20);
-// => I'm 20 years old.
-
 ```
 
-用 export default 的方式將方法 Hello 匯出，default 表示 Hello 是這個 module 預設的名稱，因此相對應的 import 就直接使用該名稱載入。
+### import
 
-## 匯出 class 基本用法
+module 的 export 有加上 default 時，
+
+會自動把該 module 定名為 default 再 export。
+
+```javascript
+import Hello from '../xx.js'
+// 實際上等於:
+import {default as Hello} from '../xx.js';
+
+Hello("Mike");
+```
+
+import 後要改變 module 名稱的話，
+
+就直接改名字就好囉
+
+```javascript
+import Hola from '../xx.js'
+// 實際上等於:
+import {default as Hola} from '../xx.js';
+
+Hola("Mike");
+```
+
+
+
+## export class 範例
 
 ```javascript
 // person.js
@@ -53,7 +100,7 @@ export default class Person {
 
 // main.js
 import Person from './person';
-let someOne = Person.new('Peter', 25, 'male');
+let someOne = new Person('Peter', 25, 'male');
 someOne.greeting();
 // => I am Peter, I am 25 years old.
 
@@ -69,13 +116,12 @@ import {Person, Vehicle} from './item';
 
 
 
-## export default 
+## export 匿名函數 
 
 想要輸出匿名函數，可以使用 export default 命令。
 
 ```javascript
 // export-default.js
-
 export default function () {
     console.log('foo');
 }
@@ -113,3 +159,5 @@ export default 命令用於指定模塊的默認輸出。如果模塊加載時�
 ##  資料來源與參考
 
 https://wohugb.gitbooks.io/ecmascript-6/content/docs/class.htmlx
+
+https://www.nctusam.com/2017/11/12/368/
