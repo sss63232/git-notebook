@@ -1,9 +1,11 @@
-# Introduction
+# Intro
 
-This is my digital notebook about what I l am trying to learn.
+數位記事本，紀錄片段的知識
 
-version 0.0.0(release test)
+##瑣碎紀錄
 
-version 0.0.0(release test)
+這裡存放的是一些我的瑣碎紀錄，大部分是沒有完整架構的文章，有時候甚至只是一些剪剪貼貼，算是我自己一個快速紀錄東西的暫時倉庫！
 
-version 0.0.0(release test)
+## 聲明
+
+其中文章內容若有引用他人文章，本人僅節錄內容供個人使用，著作權完全保留原作者！
