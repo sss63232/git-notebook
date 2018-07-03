@@ -1,6 +1,6 @@
-# Ubuntu 改大量名稱
+# Ubuntu 改大量檔案名稱 rename, find
 
-## rename 指令
+# rename 指令
 
 ```shell
 # 基本用法
@@ -35,6 +35,12 @@ rename -v s/xyz/aaa/ *
 ```shell
 # 目錄下所有 .es6 改成 .js
 find . -name "*.es6" -exec rename -v 's/\.es6$/\.js/i' {} \;
+```
+
+## for windows
+
+```shell
+FOR /R "C:\Users\newtchen.JUMBO\Documents\work\jinbao_html_game\src" %f IN (*.es6) DO REN "%f" *.js
 ```
 
 ## References
