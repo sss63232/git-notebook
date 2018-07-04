@@ -148,20 +148,26 @@ console.log('--------');
 dfdsf
 
 ```javascript
+const testArr = [3, 4, 63, 23, 6435, 44, 2, 66];
 const insertionSort = arr => {
-  let cloneArr = [...arr];
-  cloneArr.forEach((num, i) => {
-    for (let j = 1; j < i + 1; j++) {
-      const sortedCard = cloneArr[i - j];
-      if (sortedCard > num) {
-        ///
-        //要用插入的
-        [cloneArr[i], cloneArr[i - j]] = [cloneArr[i - j], cloneArr[i]];
-        break;
-      }
-    }
-  });
-  return cloneArr;
+    let cloneArr = [...arr];
+    cloneArr.forEach((num, i) => {
+        for (let j = 1; j < i + 1; j++) {
+            const prevIndex = i - j;
+            const sortedCard = cloneArr[prevIndex];
+            if (num > sortedCard) {
+                cloneArr.splice(i, 1);
+                cloneArr.splice(prevIndex + 1, 0, num);
+                break;
+            }
+            if (prevIndex === 0) {
+                cloneArr.splice(i, 1);
+                cloneArr.unshift(num);
+                break;
+            }
+        }
+    });
+    return cloneArr;
 };
 console.log('--------');
 console.log('insertionSort', insertionSort(testArr));
