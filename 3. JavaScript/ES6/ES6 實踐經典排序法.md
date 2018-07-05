@@ -149,33 +149,79 @@ dfdsf
 
 ```javascript
 const testArr = [3, 4, 63, 23, 6435, 44, 2, 66];
+//// 這是我一開始自己思考後的解法
 const insertionSort = arr => {
-    let cloneArr = [...arr];
-    cloneArr.forEach((num, i) => {
-        for (let j = 1; j < i + 1; j++) {
-            const prevIndex = i - j;
-            const sortedCard = cloneArr[prevIndex];
-            if (num > sortedCard) {
-                cloneArr.splice(i, 1);
-                cloneArr.splice(prevIndex + 1, 0, num);
-                break;
-            }
-            if (prevIndex === 0) {
-                cloneArr.splice(i, 1);
-                cloneArr.unshift(num);
-                break;
-            }
-        }
-    });
-    return cloneArr;
+  const cloneArr = [...arr];
+  const cloneLength = cloneArr.length;
+  // 第一章牌沒有可以比的對象，
+  // 所以從第二張牌開始進行插入排序
+  for (let i = 1; i < cloneLength; i++) {
+    const unsortedCard = cloneArr[i];
+    // 這一輪 "unSortedCard" 的位置，
+    // 有機會往左移動
+    let unsortedIndex = i;
+    // j 是往前第幾張牌的 index
+    for (let j = 1; j < i + 1; j++) {
+      const sortedIndex = i - j;
+      if (cloneArr[sortedIndex] > unsortedCard) {
+        [
+          cloneArr[unsortedIndex], 
+          cloneArr[sortedIndex]] 
+        = 
+        [
+          cloneArr[sortedIndex],
+          cloneArr[unsortedIndex],
+        ];
+        // unsortedCard 與左邊一張牌交換後，
+        // 位置 index 也要更新
+        unsortedIndex--;
+      } else {
+        // 如果 unsortedCard 比 sortedCard 大的話，
+        // 那就是位置正確了
+        break;
+      }
+    }
+  }
+  return cloneArr;
+};
+
+//// 這是參考範例後的解法
+// 主要差在，既然我的內迴圈有用 break，
+// 代表迴圈次數並不固定，
+// 那就可以使用 while 迴圈
+
+const insertionSort = arr => {
+  const cloneArr = [...arr];
+  const cloneLength = cloneArr.length;
+
+  for (let i = 1; i < cloneLength; i++) {
+    const unsortedCard = cloneArr[i];
+    let unsortedIndex = i;
+
+    while (cloneArr[unsortedIndex - 1] > unsortedCard) {
+      [
+        cloneArr[unsortedIndex - 1],
+        cloneArr[unsortedIndex],
+      ] = [
+        cloneArr[unsortedIndex],
+        cloneArr[unsortedIndex - 1],
+      ];
+      unsortedIndex--;
+    }
+  }
+
+  return cloneArr;
 };
 console.log('--------');
+console.log('original', testArr);
 console.log('insertionSort', insertionSort(testArr));
 console.log('--------');
 
 ```
 
+### 合併排序法（Merge Sort）
 
+gg
 
 ## References
 
