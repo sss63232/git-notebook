@@ -1,4 +1,4 @@
-# ES6 實踐經典排序法
+# ES6 實踐經典排序法 (1)
 
 最近覺得需要複習一下常用的排序方法，
 因為已經發生好幾次工作的時候需要用到排序，
@@ -8,10 +8,41 @@
 看來記憶需要更新一下、加深印象了，
 同時也正好可以拿來熟悉一下 es6 的 array 處理方法
 
+## 產生隨機測試陣列
+
+為了測試排序結果，
+需要每次產生一個隨機陣列
+
+```javascript
+// 產生 min 到 max 間的亂數，包含 min, max
+const getRandomNum = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+// 產生長度為 length 的隨機陣列
+const getTestArr = ({ length = 10, min = 0, max = 10 }) => {
+  let arr = [];
+  for (let i = 0; i < length; i++) {
+    arr.push(getRandomNum(min, max));
+  }
+  return arr;
+};
+
+// 產生一個 10項，每項為 0~100 的 array
+const testArr = getTestArr({ max: 100 });
+```
+
+## 排序過程動畫
+
+動畫解釋排序法可以看超猛網站：[VisuAlgo - Sorting (Bubble, Selection, Insertion, Merge, Quick, Counting, Radix)](https://visualgo.net/en/sorting)，印象會更深刻
+
 ## 經典的排序法
 
 剛好看到 Huli 大大的 [一起用 JavaScript 來複習經典排序法吧！](http://huli.logdown.com/posts/2223627-review-the-classical-sort-algorithm-with-javascript)，
 所以我也決定要自己試著實做出這些排序法。
+
+以下的範例程式碼，
+可以直接貼到瀏覽器 console 中看結果
 
 ### 選擇排序法（Selection Sort）
 
@@ -24,14 +55,8 @@
 外迴圈控制要把 testArr 每一項跑一遍，
 內迴圈控制要把 minNum 與其後的每一項比大小
 
-動畫解釋排序法請看超猛網站：[VisuAlgo - Sorting (Bubble, Selection, Insertion, Merge, Quick, Counting, Radix)](https://visualgo.net/en/sorting)
-
-
-
-範例程式碼，可以直接貼到瀏覽器 console 中看結果
-
 ```javascript
-const testArr = [3, 4, 63, 23, 6435, 44, 2, 66];
+const testArr = getTestArr({ max: 100 });
 const selectionSort = arr => {
   let cloneArr = [...arr];
   // 外迴圈，整個 cloneArr 都要跑過一次，所以可以用 foreach
@@ -67,7 +92,7 @@ console.log('--------');
 
 也是基本分兩個迴圈：
 外迴圈決定做幾輪比對，
-沒有優話的狀況下，
+沒有優化的狀況下，
 array 有幾項就做幾輪。
 
 內迴圈為"兩兩比對"迴圈，
@@ -75,7 +100,7 @@ array 有幾項就做幾輪。
 因為每一輪的最右邊都是已知的最大值
 
 ```javascript
-const testArr = [3, 4, 63, 23, 6435, 44, 2, 66];
+const testArr = getTestArr({ max: 100 });
 const bubbleSort = arr => {
   let cloneArr = [...arr];
 
@@ -107,7 +132,10 @@ Bubble Sort 還可以增加對最佳狀況的判斷，
 就代表 array 已經排序完成。
 
 ```javascript
-const bubbleSort = arr => {
+const testArr = getTestArr({
+  max: 100,
+});
+const bubbleSortWithFlag = arr => {
   let cloneArr = [...arr];
 
   const cloneLength = cloneArr.length;
@@ -139,21 +167,31 @@ const bubbleSort = arr => {
 };
 
 console.log('--------');
-console.log('bubbleSort', bubbleSort(testArr));
+console.log(`unSorted arr`, testArr);
+console.log('bubbleSortWithFlag arr', bubbleSortWithFlag(testArr));
 console.log('--------');
 ```
 
 ### 插入排序法（Insertion Sort）
 
-dfdsf
+打麻將或完撲克牌時我們很自然會用的排序法，
+假設從牌面的最左邊開始好了，
+第一輪就會從左邊數來第二張牌開始，
+姑且稱它為 "unsortedCard"，
+第二輪 "unsortedCard" 就是左邊數來第三張牌...以此類推，
+有 n 項，便有共 n-1 輪
+
+我們每一輪的任務便是，
+讓 "unsortedCard" 一一跟它左邊的牌比大小並交換位置，
+就像氣泡排序法一樣，
+直到正確的位置
 
 ```javascript
-const testArr = [3, 4, 63, 23, 6435, 44, 2, 66];
 //// 這是我一開始自己思考後的解法
 const insertionSort = arr => {
   const cloneArr = [...arr];
   const cloneLength = cloneArr.length;
-  // 第一章牌沒有可以比的對象，
+  // 第一張牌沒有可以比的對象，
   // 所以從第二張牌開始進行插入排序
   for (let i = 1; i < cloneLength; i++) {
     const unsortedCard = cloneArr[i];
@@ -164,14 +202,7 @@ const insertionSort = arr => {
     for (let j = 1; j < i + 1; j++) {
       const sortedIndex = i - j;
       if (cloneArr[sortedIndex] > unsortedCard) {
-        [
-          cloneArr[unsortedIndex], 
-          cloneArr[sortedIndex]] 
-        = 
-        [
-          cloneArr[sortedIndex],
-          cloneArr[unsortedIndex],
-        ];
+        [cloneArr[unsortedIndex], cloneArr[sortedIndex]] = [cloneArr[sortedIndex], cloneArr[unsortedIndex]];
         // unsortedCard 與左邊一張牌交換後，
         // 位置 index 也要更新
         unsortedIndex--;
@@ -190,7 +221,7 @@ const insertionSort = arr => {
 // 代表迴圈次數並不固定，
 // 那就可以使用 while 迴圈
 
-const insertionSort = arr => {
+const insertionSortWithWhile = arr => {
   const cloneArr = [...arr];
   const cloneLength = cloneArr.length;
 
@@ -199,13 +230,7 @@ const insertionSort = arr => {
     let unsortedIndex = i;
 
     while (cloneArr[unsortedIndex - 1] > unsortedCard) {
-      [
-        cloneArr[unsortedIndex - 1],
-        cloneArr[unsortedIndex],
-      ] = [
-        cloneArr[unsortedIndex],
-        cloneArr[unsortedIndex - 1],
-      ];
+      [cloneArr[unsortedIndex - 1], cloneArr[unsortedIndex]] = [cloneArr[unsortedIndex], cloneArr[unsortedIndex - 1]];
       unsortedIndex--;
     }
   }
@@ -213,19 +238,16 @@ const insertionSort = arr => {
   return cloneArr;
 };
 console.log('--------');
-console.log('original', testArr);
-console.log('insertionSort', insertionSort(testArr));
+console.log('unsorted arr', testArr);
+console.log('insertionSort arr', insertionSort(testArr));
+console.log(`insertionSortWithWhile arr`, insertionSortWithWhile(testArr));
 console.log('--------');
-
 ```
-
-### 合併排序法（Merge Sort）
-
-gg
 
 ## References
 
 http://huli.logdown.com/posts/2223627-review-the-classical-sort-algorithm-with-javascript
+
 https://visualgo.net/en/sorting
 
 https://hiskio.com/courses/127
