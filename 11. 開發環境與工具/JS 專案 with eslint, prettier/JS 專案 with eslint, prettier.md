@@ -21,7 +21,7 @@ ESLint 與 prettier 非常類似，只是 prettier 更專注在程式碼樣式�
 專案資料夾中
 
 ```shell
-yarn add babel-eslint eslint eslint-config-prettier eslint-plugin-prettier prettier
+yarn add babel-eslint eslint eslint-config-prettier eslint-plugin-prettier prettier -D
 # or
 npm i -D babel-eslint eslint eslint-config-prettier eslint-plugin-prettier  prettier
 ```
