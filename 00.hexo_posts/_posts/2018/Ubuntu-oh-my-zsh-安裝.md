@@ -1,3 +1,12 @@
+---
+title: Ubuntu oh-my-zsh 安裝
+date: 2018-07-13 16:13:16
+categories:
+tags:
+- zsh
+- Ubuntu
+---
+
 # Ubuntu oh-my-zsh 安裝
 
 ## Ubuntu 預設的 bash
@@ -29,7 +38,7 @@ echo $SHELL
 # 如果出現的不是 /user/bin/zsh，改用
 sudo vim /etc/passwd
 
-# 把第一行跟最後一行後面改為 zsh 
+# 把第一行跟最後一行後面改為 zsh
 # 改完大概會像這樣
 root:x:0:0:root:/root:/bin/zsh
 ...
