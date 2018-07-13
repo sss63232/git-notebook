@@ -1,4 +1,4 @@
-# ES6 實踐經典排序法 (1)
+# ES6 實踐經典排序法：選擇排序法, 泡沫排序法, 插入排序法
 
 最近覺得需要複習一下常用的排序方法，
 因為已經發生好幾次工作的時候需要用到排序，
@@ -41,6 +41,7 @@ const testArr = getTestArr({ max: 100 });
 剛好看到 Huli 大大的 [一起用 JavaScript 來複習經典排序法吧！](http://huli.logdown.com/posts/2223627-review-the-classical-sort-algorithm-with-javascript)，
 所以我也決定要自己試著實做出這些排序法。
 
+這次先實踐效率較差的三種演算法，
 以下的範例程式碼，
 可以直接貼到瀏覽器 console 中看結果
 

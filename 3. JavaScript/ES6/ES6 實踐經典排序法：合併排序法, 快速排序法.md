@@ -1,4 +1,4 @@
-# ES6 實踐經典排序法 (2)
+# ES6 實踐經典排序法：合併排序法, 快速排序法
 
 ## 產生隨機測試陣列
 
@@ -30,15 +30,25 @@ const testArr = getTestArr({ max: 100 });
 
 ## 經典的排序法
 
-參考 [一起用 JavaScript 來複習經典排序法吧！](http://huli.logdown.com/posts/2223627-review-the-classical-sort-algorithm-with-javascript)，
-試著自己實做出這些排序法。
+合併排序法與快速排序法都用到遞迴的概念，
+執行起來比較快速，
+在實務上經常使用。
 
 以下的範例程式碼，
 可以直接貼到瀏覽器 console 中看結果
 
 ### 合併排序法（Merge Sort）
 
+將 Array 分成 arr1, arr2 兩份子集，
+每一份子集再繼續分割成兩個子集，
+直到子集中只剩下一個元素，無法再分割。
+
+接著兩兩合併成一個新 Array，
+同時進行排序。
+
 ![img](/home/newtchen/Documents/MyProjects/git-notebook/source/img/merge.png)
+
+![](/home/newtchen/Documents/MyWorks/git-notebook/ResourceForArticles/img/merge.png)
 
 來源：http://www.java2novice.com/java-sorting-algorithms/merge-sort/
 
@@ -105,9 +115,34 @@ console.log('--------');
 
 ### 快速排序法
 
-1. 取一個數為 pivot，
-2. 然後將 arr 切分成 leftArr(<pivot), pivot, rightArr(>pivot)
-3. 對 leftArr, rightArrr 兩個子集重複進行第一步與第二步，直到子集 arr 中只有一個數
+很重要的一種排序方法！
+
+運用 [分治法（Divide and conquer）](https://godbasin.github.io/2017/07/16/quick-sort/) 概念，
+使用廣泛，需要好好了解。
+
+排序邏輯：
+
+#### 1. pivot
+
+從 Array 中取一個數為 pivot，可以翻譯為 "基準"，
+一個好的 pivot 可以讓排序更快速完成，
+所以如何找到好的 pivot 是一個需要考慮的問題
+
+#### 2. partition
+
+然後將 Array 切分成三組，
+分別是 leftArr( 都是小於 pivot 的數), pivot(自己一組), rightArr( 都是大於 pivot 的數 )，
+這個動作稱為 partition
+
+#### 3. recursive
+
+對 leftArr, rightArrr 兩個子集重複進行第一步與第二步，
+直到子集長度為 0 or 1，該子集便是排序完成，
+之後就可以向上合併
+
+#### 簡單實現
+
+直觀，但比較差勁
 
 ```javascript
 const quickSort = arr => {
@@ -144,6 +179,8 @@ console.log('quickSort arr', quickSort(testArr));
 console.log('--------');
 
 ```
+
+#### in-place 版本
 
 
 
