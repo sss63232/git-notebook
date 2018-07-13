@@ -38,6 +38,9 @@ root:x:0:0:root:/root:/bin/zsh
 username:x:1000:1000:newtchen,,,:/home/username:/bin/zsh
 ```
 
+有時候可能需要重新開機，
+才可以看到預設 shell 改變為 zsh
+
 ### 安裝 oh-my-zsh
 
 ```shell

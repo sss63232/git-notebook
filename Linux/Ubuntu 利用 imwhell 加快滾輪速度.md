@@ -19,11 +19,6 @@ Control_L, Up,   Control_L|Button4
 Control_L, Down, Control_L|Button5
 Shift_L,   Up,   Shift_L|Button4
 Shift_L,   Down, Shift_L|Button5
-
-作者：画星星高手
-链接：https://www.jianshu.com/p/59fb44b8cfb1
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 ```
 
 ## 執行
