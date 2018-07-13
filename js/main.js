@@ -1,0 +1,11 @@
+console.log('--------');
+console.log(process.cwd());
+console.log(__dirname);
+console.log('--------');
+var fs = require('fs');
+var path = process.cwd();
+var status = fs.statSync(path);
+console.log('--------');
+console.log(status.isDirectory());
+console.log(fs.readdirSync(path));
+console.log('--------');
