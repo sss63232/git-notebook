@@ -126,22 +126,29 @@ console.log('--------');
 
 從 Array 中取一個數為 pivot，可以翻譯為 "基準"，
 一個好的 pivot 可以讓排序更快速完成，
-所以如何找到好的 pivot 是一個需要考慮的問題
+所以如何找到好的 pivot 是一個可以另外提出來研究的問題，
+我們先暫時不考慮。
 
 #### 2. partition
 
 然後將 Array 切分成三組，
-分別是 leftArr( 都是小於 pivot 的數), pivot(自己一組), rightArr( 都是大於 pivot 的數 )，
+分別是 
+left_array( 都是小於 pivot 的數 ), 
+pivot( 自己一組 ), 
+right_array( 都是大於 pivot 的數 )，
 這個動作稱為 partition
 
 #### 3. recursive
 
-對 leftArr, rightArrr 兩個子集重複進行第一步與第二步，
-直到子集長度為 0 or 1，該子集便是排序完成，
+對 left_array, right_array 兩個子集重複進行第一步與第二步，
+直到子集長度為 0 or 1，
+該子集便是排序完成，
 之後就可以向上合併
 
 #### 簡單實現
 
+假設第一個數是 pivot，
+不影響原始 array，
 直觀，但比較差勁
 
 ```javascript
@@ -150,26 +157,27 @@ const quickSort = arr => {
 
     if (arr.length < 2) return arr;
 
-    // 一律假設第一個數是 pivot
+    // 假設第一個數是 pivot，
+    // 同時將它移出主 arr
     const pivot = arr.splice(0, 1)[0];
 
-    // 除了 pivot 外的每一項分成兩堆，
+    // arr 去除 pivot 後要分成兩堆，
     // 大於 pivot 跟小於 pivot
-    const leftArr = [];
-    const rightArr = [];
+    const left_array = [];
+    const right_array = [];
     arr.forEach(num => {
         if (num > pivot) {
-            rightArr.push(num);
+            right_array.push(num);
         } else {
-            leftArr.push(num);
+            left_array.push(num);
         }
     });
 
     // 遞迴
     return [
-        ...quickSort(leftArr),
+        ...quickSort(left_array),
         pivot,
-        ...quickSort(rightArr),
+        ...quickSort(right_array),
     ];
 };
 
