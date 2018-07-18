@@ -1,55 +1,121 @@
-# is Palindrome
+# Caesar Cipher 凱撒密碼
 
 ## concept
 
 ```javascript
-// return true/false
-function isPalindrone (string) {
+// return a new string
+function caesarCipher (string, num) {
     ...
 }
 ```
 
-判斷字串是否為 Palindrome，
-Palindrome 例子：
+給一字串與偏移量，
+會返回經過偏移的新字串
 
-- race car
-- Madam, I'm Adam
+string 有大小寫，
+num 有正負數
+
+### Caesar Cipher example
+
+>  Bee, 3 => Ehh
+
+B 向後三位變 E 
+e 向後三位變 h 
+以此類推...
+
+![1531899604263](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1531899604263.png)
+圖片來源：https://www.wikiwand.com/zh-tw/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC
+
+
 
 ## example code
 
 ```javascript
-
 const caesarCipher = (str, num) => {
+    // % 的計算不管正負，最後
+    // 結果的正負號會與被除數一樣
     num = num % 26;
     const alphabet = [...`abcdefghijklmnopqrstuvwxyz`];
 
+    const _getNewIndex = (currentIndex, shiftNum) => {
+        const newIndex = (currentIndex + shiftNum) % 26;
+        return newIndex < 0 ? newIndex + 26 : newIndex;
+    };
+
     const _getLetterInCipher = (letter, i) => {
-        const letterIndex = alphabet.indexOf(letter);
-        if (letterIndex < 0) {
+        const currentLetterIndex = alphabet.indexOf(letter);
+        if (currentLetterIndex < 0) {
+            // 如果找不到， indexOf 的結果會是 -1，代表該字非英文字母
             return letter;
         } else {
+            const newIndex = _getNewIndex(
+                currentLetterIndex,
+                num
+            );
+            const newLetter = alphabet[newIndex];
+            // 判斷該字母在原始 str 中是否為大寫
             const isUpperCase =
                 str[i] === letter.toUpperCase();
-            const newIndex = letterIndex + num;
-            const newLetter =
-                alphabet[
-                    newIndex < 0 ? newIndex + 26 : newIndex
-                ];
             return isUpperCase
                 ? newLetter.toUpperCase()
                 : newLetter;
         }
     };
 
+    // 將 str 一個個字母經過位移後，再組合成新 string
     let newStr = ``;
     str.toLowerCase()
         .split(``)
-        .forEach((letter, i) => {
-            newStr += _getLetterInCipher(letter, i);
-        });
+        .forEach(
+            (letter, i) =>
+                (newStr += _getLetterInCipher(letter, i))
+        );
 
     return newStr;
 };
 
-console.log(caesarCipher('Abc dD', -5));
+console.log(caesarCipher('A*-*BcDe', 25));
+console.log(caesarCipher('apple', 2));
+console.log(caesarCipher('Bee!!', -28));
 ```
+
+最需要注意的就是大小寫判斷的地方，
+因為我們的 alphabet 陣列為了方便，
+只有列出小寫的字母。
+
+## Code from `Learning Algorithms`
+
+```javascript
+function caesarCipher(str,num) {
+  num = num % 26;
+  var lowerCaseString = str.toLowerCase();
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  var newString = '';
+  
+  for (var i = 0; i < lowerCaseString.length; i++) {
+    var currentLetter = lowerCaseString[i];
+    if (currentLetter === ' ') {
+      newString += currentLetter;
+      continue;
+    }
+    var currentIndex = alphabet.indexOf(currentLetter);
+    var newIndex = currentIndex + num;
+    if (newIndex > 25) newIndex = newIndex - 26;
+    if (newIndex < 0) newIndex = 26 + newIndex;
+    if (str[i] === str[i].toUpperCase()) {
+      newString += alphabet[newIndex].toUpperCase();
+    }
+    else newString += alphabet[newIndex];
+  };
+  
+  return newString;
+}
+caesarCipher('Zoo Keeper', 2);
+```
+
+
+
+## References
+
+https://www.wikiwand.com/zh-tw/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC
+
