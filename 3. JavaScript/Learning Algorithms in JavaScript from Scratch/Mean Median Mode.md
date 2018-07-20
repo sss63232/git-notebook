@@ -25,7 +25,9 @@ const meanMedianMode = arr => {
 // 平均數
 const getMean = arr => {
     // 用 Array.prototype.reduce() 來進行加總 array 的加總
-    const sum = arr.reduce((preValue, curValue) => preValue + curValue);
+    const sum = arr.reduce(
+        (preValue, curValue) => preValue + curValue
+    );
     return sum / arr.length;
 };
 
@@ -43,7 +45,8 @@ const getMedian = arr => {
         return arr[Math.floor(halfLength)];
     } else {
         // 長度為偶數時，中位數是最中間兩項的平均數
-        const sumOfMiddleTwo = arr[halfLength - 1] + arr[halfLength];
+        const sumOfMiddleTwo =
+            arr[halfLength - 1] + arr[halfLength];
         return sumOfMiddleTwo / 2;
     }
 };
@@ -56,44 +59,93 @@ const getMode = arr => {
 
     let maxFrequencyValue = 0;
     // 最後輸出的眾數為 array 形式，因為有可能有出現次數相當的數
-    let Mode = [];
+    let mode = [];
     Object.keys(hashTable).forEach(key => {
         const frequencyValue = hashTable[key];
         if (frequencyValue > maxFrequencyValue) {
-            Mode = [key];
+            mode = [key];
             maxFrequencyValue = frequencyValue;
         } else if (frequencyValue === maxFrequencyValue) {
-            Mode.push(key);
+            mode.push(key);
         }
     });
 
     // 如果每一項的出現次數都相同，則沒有眾數
-    if (Mode.length === arr.length) Mode = null;
+    if (mode.length === arr.length) mode = null;
 
-    return Mode;
+    return mode;
 };
 
 console.log('--------');
 console.log(testArr);
 console.log(meanMedianMode(testArr));
 console.log('--------');
-
 ```
 
 ## Code from `Learning Algorithms`
 
 ```javascript
-function reverseArrayInPlace(arr) {
-  for (var i = 0; i < arr.length / 2; i++) {
-    var tempVar = arr[i];
-    arr[i] = arr[arr.length - 1 - i];
-    arr[arr.length - 1 - i] = tempVar;
+function meanMedianMode(array) {
+  return {
+    mean: getMean(array),
+    median: getMedian(array),
+    mode: getMode(array)
   }
-  
-  return arr;
 }
  
-reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8]);
+function getMean(array) {
+  var sum = 0;
+  
+  array.forEach(num => {
+    sum += num;
+  });
+  
+  var mean = sum / array.length;
+  return mean;
+}
+ 
+function getMedian(array) {
+  array.sort(function(a, b){return a-b});
+  var median;
+  
+  if (array.length % 2 !== 0) {
+    median = array[Math.floor(array.length / 2)];
+  }
+  else {
+    var mid1 = array[(array.length / 2) - 1];
+    var mid2 = array[array.length / 2];
+    median = (mid1 + mid2) / 2;
+  }
+  
+  return median;
+}
+ 
+function getMode(array) {
+  var modeObj = {};
+  
+  // create modeObj
+  array.forEach(num => {
+    if (!modeObj[num]) modeObj[num] = 0;
+    modeObj[num]++;
+  });
+  
+  // create array of mode/s 
+  var maxFrequency = 0;
+  var modes = [];
+  for (var num in modeObj) {
+    if (modeObj[num] > maxFrequency) {
+      modes = [num];
+      maxFrequency = modeObj[num];
+    }
+    else if (modeObj[num] === maxFrequency) modes.push(num);
+  }
+  // if every value appears same amount of times 
+  if (modes.length === Object.keys(modeObj).length) modes = [];
+  return modes;
+}
+ 
+ 
+meanMedianMode([9,10,23,10,23,9]);
 ```
 
 
