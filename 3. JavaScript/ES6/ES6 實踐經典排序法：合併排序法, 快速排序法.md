@@ -61,28 +61,28 @@ const mergeSort = arr => {
      * 便於釐清後面 mergeSort 的主體邏輯
      */
     const getMergedSortedArr = (arr1, arr2) => {
-        const clone1 = [...arr1];
-        const clone2 = [...arr2];
+        arr1 = [...arr1];
+        arr2 = [...arr2];
 
         // 兩個 array 依序拿出第一個來比大小，
-        // 小的就先放進最終的 mergedArr 中
+        // 小的就先放進最終的 finalArr 中
         const finalArr = [];
-        while (clone1.length > 0 && clone2.length > 0) {
-            if (clone1[0] < clone2[0]) {
-                finalArr.push(clone1.shift());
-            } else {
-                finalArr.push(clone2.shift());
-            }
+        while (arr1.length && arr2.length) {
+            const arr1FirstNumIsSmaller = arr2[0] > arr1[0];
+            const smallerNum = (arr1FirstNumIsSmaller
+                ? arr1
+                : arr2
+            ).shift();
+            finalArr.push(smallerNum);
         }
-        // 執行到這裡代表 clone1, clone2 一個空了，一個沒空
-        // 所以我們要找出沒空那一個 array，
-        // 並把它剩下的數字全部填到 mergedArr 最後
-        const isClone1Empty = clone1.length === 0;
-        (isClone1Empty ? clone2 : clone1).forEach(num =>
-            finalArr.push(num)
-        );
 
-        return finalArr;
+        // 執行到這裡代表 arr1, arr2 一個空了，一個沒空
+        // 所以我們要找出沒空那一個 array，
+        // 並把它剩下的數字全部填到 finalArr 的最後面
+
+        return finalArr.concat(
+            arr1.length > 0 ? arr1 : arr2
+        );
     };
 
     /**
@@ -90,8 +90,8 @@ const mergeSort = arr => {
      */
     const _mergeSort = arr => {
         const length = arr.length;
-        // 只有一項不需要排序
-        if (length < 2) return arr;
+        // recursive 的跳出條件
+        if (length <= 1) return arr;
         // 找中間點
         const medianIndex = Math.floor(length / 2);
         // 取第一項到中間點，不含中間點
@@ -111,6 +111,7 @@ console.log('--------');
 console.log('unsorted arr', testArr);
 console.log('mergeSort arr', mergeSort(testArr));
 console.log('--------');
+
 ```
 
 ### 快速排序法

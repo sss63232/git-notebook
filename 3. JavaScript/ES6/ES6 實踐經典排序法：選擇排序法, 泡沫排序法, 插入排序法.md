@@ -97,7 +97,7 @@ console.log('--------');
 array 有幾項就做幾輪。
 
 內迴圈為"兩兩比對"迴圈，
-要注意的是兩兩比對的終點 index 會隨沒一輪外迴圈而左移，
+要注意的是兩兩比對的終點 index 會隨每一輪外迴圈而左移，
 因為每一輪的最右邊都是已知的最大值
 
 ```javascript
@@ -172,6 +172,34 @@ console.log(`unSorted arr`, testArr);
 console.log('bubbleSortWithFlag arr', bubbleSortWithFlag(testArr));
 console.log('--------');
 ```
+
+外迴圈用倒數的，
+這樣外迴圈的 index 可以直接當內迴圈的 endIndex 用
+
+```javascript
+const bubbleSort = arr => {
+    arr = [...arr];
+
+    const length = arr.length;
+
+    // round
+    let isSorted = false;
+    for (let i = length - 1; i > 0 && !isSorted; i--) {
+        // 比對換位
+        isSorted = true;
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                isSorted = false;
+            }
+        }
+    }
+
+    return arr;
+};
+```
+
+
 
 ### 插入排序法（Insertion Sort）
 
