@@ -10,9 +10,10 @@
 - 00.hexo_posts
   - Posts
     - 2018
-      * [ES6 實踐經典排序法 (1)](00.hexo_posts/_posts/2018/ES6-實踐經典排序法-1.md)
       * [Hexo3 在文章中插入圖片](00.hexo_posts/_posts/2018/Hexo3-在文章中插入圖片.md)
+      * [Ubuntu oh-my-zsh 安裝](00.hexo_posts/_posts/2018/Ubuntu-oh-my-zsh-安裝.md)
       * [Ubuntu 安裝 Node.js, Yarn](00.hexo_posts/_posts/2018/Ubuntu-安裝-Node-js-Yarn.md)
+      * [VS Code 使用 zsh 當作 terminal](00.hexo_posts/_posts/2018/VS-Code-使用-zsh-當作-terminal.md)
     * [robots.txt 拒絕網路蜘蛛搜尋所有資料](00.hexo_posts/_posts/2016-0722-robots-txt-拒絕網路蜘蛛搜尋所有資料.md)
     * [GitHub中 Watch、Star和 Fork的使用差異](00.hexo_posts/_posts/2016-0724-GitHub中-Watch、Star和-Fork的使用差異.md)
     * [ 按照順序執行 gulp.task](00.hexo_posts/_posts/2016-0727-按照順序執行-gulp-task.md)
@@ -64,9 +65,8 @@
   * [cVim筆記，用鍵盤操控chrome](11. 開發環境與工具/cVim筆記，用鍵盤操控chrome.md)
   * [Emmet 快速小範例](11. 開發環境與工具/Emmet-快速小範例.md)
 - 12.Linux
-  * [Ubuntu 利用 imwhell 加快滾輪速度](12.Linux/Ubuntu 利用 imwhell 加快滾輪速度.md)
+  * [Ubuntu 利用 imwheel 加快滾輪速度](12.Linux/Ubuntu 利用 imwheel 加快滾輪速度.md)
   * [Ubuntu 安裝 Nodejs, Yarn](12.Linux/Ubuntu 安裝 Nodejs, Yarn.md)
-  * [Ubuntu 安裝 oh-my-zsh ](12.Linux/Ubuntu 安裝 oh-my-zsh .md)
   * [Ubuntu 安裝後](12.Linux/Ubuntu 安裝後.md)
   * [Ubuntu 改大量檔案名稱 rename, find](12.Linux/Ubuntu 改大量檔案名稱 rename, find.md)
   * [同一顆硬碟裝完 Win10 裝 Ubuntu](12.Linux/同一顆硬碟裝完 Win10 裝 Ubuntu.md)
@@ -81,7 +81,8 @@
   - box-shadow說明
     * [Box Shadow](2. CSS/box-shadow說明/box-shadow.md)
   - [CSS Grid](2. CSS/CSS Grid/CSS Grid.md)
-  - [CSS Selectors Attribute Selectors](2. CSS/CSS selectors(Attribute Selectors)/CSS selectors(Attribute Selectors).md)
+  - CSS Selectors Attribute Selectors
+    * [CSS Selectors Attribute Selectors](2. CSS/CSS selectors, Attribute Selectors/CSS selectors(Attribute Selectors).md)
   - Flex詳解.md
     * [flex 詳解](2. CSS/Flex詳解.md/flex 詳解.md)
   - Float
@@ -117,7 +118,6 @@
   * [用 CSS 隱藏 DOM 元素的幾種方法](2. CSS/用 CSS 隱藏 DOM 元素的幾種方法.md)
 - 3. JavaScript
   - ES 6
-    * [ES6 實踐經典排序法 (3)](3. JavaScript/ES6/ES6 實踐經典排序法 (3).md)
     * [ES6 實踐經典排序法：合併排序法, 快速排序法](3. JavaScript/ES6/ES6 實踐經典排序法：合併排序法, 快速排序法.md)
     * [ES6 實踐經典排序法：選擇排序法, 泡沫排序法, 插入排序法](3. JavaScript/ES6/ES6 實踐經典排序法：選擇排序法, 泡沫排序法, 插入排序法.md)
     * [ES6 展開與其餘運算子](3. JavaScript/ES6/ES6 展開與其餘運算子.md)
@@ -137,9 +137,24 @@
   - JavaScript 瀏覽器物件模型
     * [Scree Object](3. JavaScript/JavaScript 瀏覽器物件模型/scree object.md)
     * [Window Object](3. JavaScript/JavaScript 瀏覽器物件模型/window object.md)
+  - [JavaScript 物件屬性描述器 PropertyDescriptor](3. JavaScript/JavaScript 物件屬性描述器 PropertyDescriptor/JavaScript 物件屬性描述器 PropertyDescriptor.md)
+  - Learning Algorithms In Java Script From Scratch
+    * [Big O Notation, Time Complexity 衡量程式碼效率](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Big O Notation, Time Complexity 衡量程式碼效率.md)
+    * [Binary Search](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Binary Search.md)
+    * [Caesar Cipher](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Caesar Cipher.md)
+    * [Fibonacci](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Fibonacci.md)
+    * [Fizz Buzz](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Fizz Buzz.md)
+    * [Harmless Ransom Note 計算特定字串出現次數](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Harmless Ransom Note 計算特定字串出現次數.md)
+    * [Is Palindrome](3. JavaScript/Learning Algorithms in JavaScript from Scratch/IsPalindrome.md)
+    * [Max Stock Profit](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Max Stock Profit.md)
+    * [Mean Median Mode](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Mean Median Mode.md)
+    * [Reverse Array In Place](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Reverse Array In Place.md)
+    * [Reverse Words](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Reverse Words.md)
+    * [Sieve Of Eratosthenes](3. JavaScript/Learning Algorithms in JavaScript from Scratch/Sieve of Eratosthenes.md)
   - [Na N Is Na N](3. JavaScript/NaN, isNaN/NaN, isNaN.md)
   - [npm 輔助工具 npm-check](3. JavaScript/npm 輔助工具 npm-check/npm 輔助工具 npm-check.md)
   - [Promise, javascript 執行順序](3. JavaScript/Promise, javascript 執行順序/Promise, javascript 執行順序.md)
+  - [遍歷物件](3. JavaScript/遍歷物件/遍歷物件.md)
   * [audiosprite with howler.js](3. JavaScript/audiosprite with howler.js.md)
   * [console 基本種類與用法](3. JavaScript/console 基本種類與用法.md)
   * [DOM 事件傳遞：補或與冒泡](3. JavaScript/DOM 事件傳遞：補或與冒泡.md)
@@ -165,13 +180,12 @@
   * [Scope](3. JavaScript/Scope.md)
   * [This](3. JavaScript/this.md)
   * [Undefined](3. JavaScript/undefined.md)
-  * [函式也是物件的一種(functions are object)](3. JavaScript/函式也是物件的一種(functions are object).md)
-  * [函式的參數-傳值或傳址(by value 和 by reference)](3. JavaScript/函式的參數-傳值或傳址(by value 和 by reference).md)
-  * [原型 (prototype) 物件導向](3. JavaScript/原型 (prototype) 物件導向.md)
+  * [函式也是物件的一種, functions are object](3. JavaScript/函式也是物件的一種, functions are object.md)
+  * [函式的參數-傳值或傳址, by value or by reference](3. JavaScript/函式的參數-傳值或傳址, by value or by reference.md)
+  * [原型, prototype, 物件導向](3. JavaScript/原型, prototype, 物件導向.md)
   * [瀏覽器元素座標與尺寸](3. JavaScript/瀏覽器元素座標與尺寸.md)
   * [物件導向 JavaScript 建立物件](3. JavaScript/物件導向 JavaScript 建立物件.md)
-  * [用 getEventListerner() 查看 EventListener](3. JavaScript/用 getEventListerner() 查看 EventListener.md)
-  * [遍歷物件](3. JavaScript/遍歷物件.md)
+  * [用 getEventListerner 查看 EventListener](3. JavaScript/用 getEventListerner 查看 EventListener.md)
   * [閉包, Closure, in JavaScript](3. JavaScript/閉包, Closure, in JavaScript.md)
 - 4. Design Pattern
   * [extends 與 implements](4. Design Pattern/extends 與 implements.md)
@@ -181,9 +195,9 @@
   * [Pure MVC](4. Design Pattern/pureMVC.md)
   * [Singleton](4. Design Pattern/Singleton.md)
 - 5. jQuery
-  * [event.preventDefault() 與 event.stopPropagation()](5. jQuery/event.preventDefault() 與 event.stopPropagation().md)
+  * [event.preventDefault 與 event.stopPropagation](5. jQuery/event.preventDefault 與 event.stopPropagation.md)
   * [jQuery 要點](5. jQuery/jQuery 要點.md)
-  * [jQuery.proxy()](5. jQuery/jQuery.proxy().md)
+  * [jQuery.proxy](5. jQuery/jQuery.proxy.md)
   * [jQuey 物件與 DOM 物件轉換](5. jQuery/jQuey 物件與 DOM 物件轉換.md)
 - 6. Git
   - Pro Git
@@ -263,7 +277,7 @@
     * [Best Screen Size To Design](Others/RWD/Best Screen Size To Design.md)
     * [RWD 易犯錯誤](Others/RWD/RWD 易犯錯誤.md)
     * [Screen Lock Orientation](Others/RWD/Screen lock orientation.md)
-  * [SQL Like Order By](Others/SQL(like, order by).md)
+  * [SQL Like Order By](Others/SQL_like, order by.md)
   * [使用github SSH key省去Deploy時需要輸入帳密](Others/使用github-SSH-key省去Deploy時需要輸入帳密.md)
   * [圖解DNS](Others/圖解DNS.md)
   * [網頁中嵌入程式碼](Others/網頁中嵌入程式碼.md)
