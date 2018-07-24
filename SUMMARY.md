@@ -199,6 +199,7 @@
   * [jQuery 要點](5. jQuery/jQuery 要點.md)
   * [jQuery.proxy](5. jQuery/jQuery.proxy.md)
   * [jQuey 物件與 DOM 物件轉換](5. jQuery/jQuey 物件與 DOM 物件轉換.md)
+  * [直接與委派 – jQuery.on](5. jQuery/直接與委派 – jQuery.on.md)
 - 6. Git
   - Pro Git
     - [2.2 Git 基礎 - 紀錄變更到版本庫中](6. Git/ProGit/2.2 Git 基礎 - 紀錄變更到版本庫中/2.2 Git 基礎 - 紀錄變更到版本庫中.md)
