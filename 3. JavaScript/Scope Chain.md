@@ -8,7 +8,7 @@ javascript 可沿著 Scope chain 來查找變數，也就是看看函式自身�
 
 這代表著 JavaScript 原始碼的物理位置（Physical placement）。例如：
 
-```javascript=
+```javascript
 var x = 10;
 function outer() {
     var y = 20;

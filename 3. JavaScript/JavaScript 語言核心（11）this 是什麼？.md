@@ -1,23 +1,23 @@
 # JavaScript 語言核心（11）this 是什麼？
 
-```javascript=
+```javascript
 function toString() {
     return '[' + this.name + ',' + this.age + ']';
 }
- 
+
 var p1 = {
-    name     : 'Justin', 
+    name     : 'Justin',
     age      : 35,
     toString : toString
 };
- 
+
 var p2 = {
-    name     : 'momor', 
+    name     : 'momor',
     age      : 32,
     toString : toString
 };
- 
-console.log(p1.toString());  // [Justin,35] 
+
+console.log(p1.toString());  // [Justin,35]
 console.log(p2.toString());  // [momor,32]
 ```
 
@@ -31,34 +31,34 @@ console.log(p2.toString());  // [momor,32]
 
 在 JavaScript 中，函式是 Function 的實例，Function 都會有個 call 方法，可以讓你決定 this 的參考對象。舉例來說，你可以如下呼叫：
 
-```javascript=
+```javascript
 function toString() {
     return '[' + this.name + ',' + this.age + ']';
 }
- 
+
 var p1 = {
-    name : 'Justin', 
+    name : 'Justin',
     age  : 35,
 };
- 
+
 var p2 = {
-    name     : 'momor', 
+    name     : 'momor',
     age      : 32,
 };
- 
-console.log(toString.call(p1));  // [Justin,35] 
+
+console.log(toString.call(p1));  // [Justin,35]
 console.log(toString.call(p2));  // [momor,32]
 ```
 
 這次並沒有將 toString 指定為物件的特性，而是直接使用 call 方法來呼叫函式， call 方法的第一個參數就是用來指定函式中的 this 所參考的物件。如果函式原本具有參數，則可接續在第一個參數之後。例如：
 
-```javascript=
+```javascript
 function add(num1, num2) {
     return this.num + num1 + num2;
 }
- 
+
 var o = {num : 10};
- 
+
 console.log(add.call(o, 20, 30)); // 60
 ```
 
@@ -68,36 +68,36 @@ Function 也有個 apply 方法，作用與 call 方法相同，也可讓你在�
 
 不過 apply 方法指定後續引數時，必須將引數收集為一個陣列，如果你有一組引數，必須在多次呼叫時共用，就可以使用 apply 方法。例如：
 
-```javascript=
+```javascript
 function add(num1, num2) {
     return this.num + num1 + num2;
 }
- 
+
 var o1 = {num : 10};
 var o2 = {num : 100};
 var args = [20, 30];
- 
+
 console.log(add.apply(o1, args)); // 60
 console.log(add.apply(o2, args)); // 150
 ```
 
 ## this 是以呼叫方式而定
 
-```javascript=
+```javascript
 function toString() {
     return this.name;
 }
- 
+
 var p1 = {
-    name     : 'Justin', 
+    name     : 'Justin',
     toString : toString
 };
- 
+
 var p2 = {
-    name     : 'momor', 
+    name     : 'momor',
     toString : toString
 };
- 
+
 console.log(p1.toString());        // Justin
 console.log(p2.toString());        // momor
 console.log(p1.toString.call(p2)); // momor

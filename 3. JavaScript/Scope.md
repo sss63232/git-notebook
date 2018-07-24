@@ -17,7 +17,7 @@ Variables defined inside a function are in local scope while variables defined o
 
 Variables defined inside a function are in the local scope. And they have a different scope for every call of that function. This means that variables having the same name can be used in different functions. This is because those variables are bound to their respective functions, each having different scopes, and are not accessible in other functions.
 
-```javascript=
+```javascript
 // Global Scope
 function someFunction() {
     // Local Scope #1
@@ -41,7 +41,7 @@ Block statements like `if` and `switch` conditions or `for` and `while` loops, u
 
 Contrary to the var keyword, the `let` and `const` keywords support the declaration of local scope inside block statements.
 
-```javascript=
+```javascript
 if (true) {
     // this 'if' conditional block doesn't create a scope
 
@@ -60,7 +60,7 @@ console.log(skills); // Uncaught ReferenceError: skills is not defined
 
 ## How long does Scope live?
 
-Global scope lives as long as your application lives. 
+Global scope lives as long as your application lives.
 
 Local Scope lives as long as your functions are called and executed.
 
@@ -68,13 +68,13 @@ Local Scope lives as long as your functions are called and executed.
 
 Context is different to Scope!
 
-Scope is what we discussed above and Context is used to refer to the value of this in some particular part of your code. 
+Scope is what we discussed above and Context is used to refer to the value of this in some particular part of your code.
 
 Scope refers to the visibility of variables and context refers to the value of this in the same scope.
 
 In the global scope context is always the Window object.
 
-```javascript=
+```javascript
 console.log(this);
 // logs: Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage…}
 
@@ -83,7 +83,7 @@ function logFunction() {
     console.log(this);
 }
 
-logFunction(); 
+logFunction();
 // logs: Window {speechSynthesis: SpeechSynthesis, caches: CacheStorage, localStorage: Storage…}
 // because logFunction() is not a property of an object
 
@@ -91,7 +91,7 @@ logFunction();
 
 If scope is in the method of an object, context will be the object the method is part of.
 
-```javascript=
+```javascript
 class User {
     logName() {
         console.log(this);
@@ -107,7 +107,7 @@ class User {
 
 the word context in Execution Context `refers to scope and not context`. This is a weird naming convention but because of the JavaScipt specification, we are tied to it.
 
-The context (scope) is by default set to be global. 
+The context (scope) is by default set to be global.
 
 Each function creates its own execution context.
 
@@ -127,7 +127,7 @@ The first phase that is the creation phase is present when a function is called 
 
 The Variable Object, also known as the activation object, contains all of the variables, functions and other declarations that are defined in a particular branch of the execution context. When a function is called, the interpreter scans it for all resources including function arguments, variables, and other declarations. Everything, when packed into a single object, becomes the the Variable Object.
 
-```javascript=
+```javascript
 'variableObject': {
     // contains function arguments, inner variable and function declarations
 }
@@ -141,7 +141,7 @@ In the creation phase of the execution context, the scope chain is created after
 
 The execution context can be represented as an abstract object like this:
 
-```javascript=
+```javascript
 executionContextObject = {
     'scopeChain': {}, // contains its own variableObject and other variableObject of the parent execution contexts
     'variableObject': {}, // contains function arguments, inner variable and function declarations
@@ -158,7 +158,7 @@ In the second phase of the execution context, that is the code execution phase, 
 
 Lexical Scope means that in a nested group of functions, the inner functions have access to the variables and other resources of their parent scope. This means that the child functions are lexically bound to the execution context of their parents. Lexical scope is sometimes also referred to as Static Scope.
 
-```javascript=
+```javascript
 function grandfather() {
     var name = 'Hammad';
     // likes is not accessible here
@@ -183,7 +183,7 @@ A closure can also access the variables of its outer function even after the fun
 
 When you return an inner function from a function, that returned function will not be called when you try to call the outer function. You must first save the invocation of the outer function in a separate variable and then call the variable as a function. Consider this example:
 
-```javascript=
+```javascript
 function greet() {
     name = 'Hammad';
     return function () {
@@ -202,7 +202,7 @@ greetLetter(); // logs 'Hi Hammad'
 
 The key thing to note here is that greetLetter function can access the name variable of the greet function even after it has been returned. One way to call the returned function from the greet function without variable assignment is by using parentheses () two times ()() like this:
 
-```javascript=
+```javascript
 function greet() {
     name = 'Hammad';
     return function () {
@@ -217,7 +217,7 @@ greet()(); // logs 'Hi Hammad'
 
 Encapsulating functions from the public (global) scope saves them from vulnerable attacks. But in JavaScript, there is no such thing as public or private scope. However, we can emulate this feature using closures. To keep everything separate from the global we must first encapsulate our functions within a function like this:
 
-```javascript=
+```javascript
 (function () {
   // private scope
 })();
@@ -227,7 +227,7 @@ The parenthesis at the end of the function tells the interpreter to execute it a
 
 ## The Module Pattern
 
-```javascript=
+```javascript
 var Module = (function() {
     function privateMethod() {
         // do something
@@ -243,14 +243,14 @@ var Module = (function() {
 
 The return statement of the Module contains our public functions. The private functions are just those that are not returned. Not returning functions makes them inaccessible outside of the Module namespace. But our public functions can access our private functions which make them handy for helper functions, AJAX calls, and other things.
 
-```javascript=
+```javascript
 Module.publicMethod(); // works
 Module.privateMethod(); // Uncaught ReferenceError: privateMethod is not defined
 ```
 
 One convention is to begin private functions with an underscore, and returning an anonymous object containing our public functions. This makes them easy to manage in a long object. This is how it looks:
 
-```javascript=
+```javascript
 var Module = (function () {
     function _privateMethod() {
         // do something
@@ -268,7 +268,7 @@ var Module = (function () {
 
 Another type of closure is the Immediately-Invoked Function Expression (IIFE). This is a self-invoked anonymous function called in the context of window, meaning that the value of `this` is set `window`. This exposes a single global interface to interact with. This is how it looks:
 
-```javascript=
+```javascript
 (function(window) {
     // do anything
 })(this);
@@ -278,7 +278,7 @@ Another type of closure is the Immediately-Invoked Function Expression (IIFE). T
 
 Call and Apply functions are used to change the context while calling a function. This gives you incredible programming capabilities (and some ultimate powers to Rule The World). To use the call or apply function, you just need to call it on the function instead of invoking the function using a pair of parenthesis and pass the context as the first argument. The function's own arguments can be passed after the context.
 
-```javascript=
+```javascript
 function hello() {
     // do something...
 }
@@ -290,7 +290,7 @@ hello.apply(context); // here you can pass the context(value of this) as the fir
 
 The difference between .call() and .apply() is that in Call, you pass the rest of the arguments as a list separated by a comma while apply allows you to pass the arguments in an array.
 
-```javascript=
+```javascript
 function introduce(name, interest) {
     console.log('Hi! I\'m '+ name +' and I like '+ interest +'.');
     console.log('The value of this is '+ this +'.')
@@ -310,11 +310,11 @@ introduce.apply('Hi', ['Bruce Wayne', 'businesses']); // pass the arguments in a
 ```
 
 > Call is slightly faster in performance than Apply.
-> 
+>
 
 The following example takes a list of items in the document and logs them to the console one by one.
 
-```htmlmixed=
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -368,7 +368,7 @@ Function.prototype.toString()
 Function.prototype.toString() returns a string representation of the source code of the function.
 Till now, we have discussed .call(), .apply(), and toString(). Unlike Call and Apply, Bind doesn't itself call the function, it can only be used to bind the value of context and other arguments before calling the function. Using Bind in one of the examples from above:
 
-```javascript=
+```javascript
 (function introduce(name, interest) {
     console.log('Hi! I\'m '+ name +' and I like '+ interest +'.');
     console.log('The value of this is '+ this +'.')

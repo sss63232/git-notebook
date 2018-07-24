@@ -4,13 +4,13 @@
 
 javascript 中函式是物件，是 Function 的實例，可以將之傳給另一個變數參考。
 
-```javascript=
+```javascript
 function max(num1, num2) {
     return num1 > num2 ? num1 : num2;
 }
- 
+
 var maximum = max;
- 
+
 console.log(max(10, 20));      // 20
 console.log(maximum(10, 20));  // 20
 ```
@@ -19,13 +19,13 @@ console.log(maximum(10, 20));  // 20
 
 將一個函式指定給變數，就像將一個數字指定給一個變數一樣，這看來如果覺得奇怪的話，或許下這個看來比較不奇怪
 
-```javascript=
+```javascript
 var max = function(num1, num2) {
     return num1 > num2 ? num1 : num2;
 };
- 
+
 var maximum = max;
- 
+
 console.log(max(10, 20));      // 20
 console.log(maximum(10, 20));  // 20
 ```
@@ -36,7 +36,7 @@ console.log(maximum(10, 20));  // 20
 
 上面你所看到的函式撰寫方式，稱之為函式實字（Function literal），這就像你寫下一個數值實字、物件實字或陣列實字，會產生數值或物件等：
 
-```javascript=
+```javascript
 var number = 10;        // Number literal
 var obj = {x : 10};     // Object literal
 var array = [1, 2, 3];  // Array literal
@@ -47,13 +47,13 @@ var func = function() { // Function literal
 
 函式實字會產生 Function 實例，在 JavaScript 中，無論是函式宣告或函式實字，都會產生 Function 實例。事實上，你也可以直接指定建立 Function 實例：
 
-```javascript=
-var max = new Function('num1', 'num2', 
+```javascript
+var max = new Function('num1', 'num2',
     'return num1 > num2 ? num1 : num2'
 );
- 
+
 var maximum = max;
- 
+
 console.log(max(10, 20));      // 20
 console.log(maximum(10, 20));  // 20
 ```
@@ -62,7 +62,7 @@ console.log(maximum(10, 20));  // 20
 
 以函式實字所建立的 Function 實例，在指定給別的變數前，稱為所謂的匿名函式（Anonymous function）。你可以完全不使用名稱來執行函式：
 
-```javascript=
+```javascript
 (function() {
     console.log('匿名函式...');
 })();
@@ -70,15 +70,15 @@ console.log(maximum(10, 20));  // 20
 
 ## 注意 hoisting
 
-```javascript=
+```javascript
 func();
 function func() {
     console.log('func');
 }
 // =================================================
 // 上面的函式可以正常運作，下面則會有錯誤
-// 
-// 
+//
+//
 func(); // TypeError: undefined is not a function
 var func = function() {
     console.log('func');

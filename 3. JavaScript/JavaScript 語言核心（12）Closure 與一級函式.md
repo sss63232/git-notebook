@@ -6,7 +6,7 @@ Closure 是擁有閒置變數（Free variable）的運算式。
 
 那麼何為閒置變數？閒置變數是指對於被建立的函式而言，既非區域變數也非參數的變數。舉個例子來說：
 
-```javascript=
+```javascript
 function doSome() {
     var x = 10;
     function f(y) {
@@ -14,7 +14,7 @@ function doSome() {
     }
     return f;
 }
- 
+
 var foo = doSome();
 console.log(foo(20));  // 30
 console.log(foo(30));  // 40
@@ -22,7 +22,7 @@ console.log(foo(30));  // 40
 
 上面的函式 doSome 中，函式 f 建立了一個 Closure，如果你單看：
 
-```javascript=
+```javascript
 function f(y) {
     return x + y;
 }
@@ -34,7 +34,7 @@ function f(y) {
 
 如果沒有捕捉任何變數，那麼就是單純的（一級）函式而已。例如，在下面的例子中，函式 f 沒有形成 Closure，因為它沒有捕捉外部任何變數：
 
-```javascript=
+```javascript
 function doSome() {
     var x = 10;
     function f(y) {
@@ -46,7 +46,7 @@ function doSome() {
 
 注意！ Closure 關閉的是變數，而不是變數所參考的值。下面這個範例可以證明：
 
-```javascript=
+```javascript
 function doSome() {
     var x = 10;
     function f(y) {
@@ -55,7 +55,7 @@ function doSome() {
     }
     return f;
 }
- 
+
 var foo = doSome();
 console.log(foo(20));  // 30
 console.log(foo(30));  // 60
@@ -65,7 +65,7 @@ console.log(foo(30));  // 60
 
 由於 Closure 綁定的是變數，你才可以在 Closure 中改變了被綁定變數的值，以下是另一個例子：
 
-```javascript=
+```javascript
 var sum = 0;
 [1, 2, 3, 4, 5].forEach(function(elem) {
     sum += elem;
@@ -77,7 +77,7 @@ console.log(sum); // 15
 
 你可能會有疑問的是，如果 Closure 關閉了某個變數，使得該變數的生命週期得以延長，那麼這個會怎麼樣？
 
-```javascript=
+```javascript
 function doSome() {
     var x = 10;
     function f(y) {
@@ -86,7 +86,7 @@ function doSome() {
     }
     return f;
 }
- 
+
 var foo1 = doSome();
 var foo2 = doSome();
 console.log(foo1(20));  // 30

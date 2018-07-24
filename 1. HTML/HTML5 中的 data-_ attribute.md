@@ -4,7 +4,7 @@
 
 ## html tag 中的 data-*
 
-```htmlmixed=
+```
 <div id="slider" data-type="slideShow">
   <img class='photo' data-item="1" data-size="xs" src="http://fakeimg.pl/350x200/?text=Hello" />
   <img class='photo' data-item="2" data-size="lg" src="http://fakeimg.pl/550x200/?text=Welcome" />
@@ -19,9 +19,9 @@ get, set 都是使用 [HTMLElement.dataset](https://developer.mozilla.org/zh-TW/
 
 ## 利用 CSS 操作 data-* 的資料
 
-```htmlmixed=
+```
 <article data-content="Hello Everyone">
-    
+
 </article>
 ```
 

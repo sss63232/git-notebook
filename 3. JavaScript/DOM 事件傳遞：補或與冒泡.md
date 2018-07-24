@@ -2,15 +2,15 @@
 
 ## 相關 function
 
-```javascript=
+```javascript
 addEventListener()
 preventDefault()
 stopPorpagation()
 ```
 
-## simple html structure 
+## simple html structure
 
-```htmlmixed=
+```
   <ul id="list">
     <li id="list_item">
       <a id="list_item_link" target="_blank" href="http://google.com">
@@ -27,7 +27,7 @@ stopPorpagation()
 
 一般狀況下：
 
-```javascript=
+```javascript
 const $list = document.getElementById('list');
 $list.addEventListener('click', (e) => {
   console.log('click!');
@@ -36,9 +36,9 @@ $list.addEventListener('click', (e) => {
 
 ### `eventPhase` 事件階段
 
-`e` 帶有事件的參數，其中一個是 `eventPhase`，它是一個數字，表示事件在哪一個 Phase 觸發。 
+`e` 帶有事件的參數，其中一個是 `eventPhase`，它是一個數字，表示事件在哪一個 Phase 觸發。
 
-```javascript=
+```javascript
 const $list = document.getElementById('list');
 $list.addEventListener('click', (e) => {
   console.log(e.eventPhase);
@@ -49,7 +49,7 @@ $list.addEventListener('click', (e) => {
 // BUBBLING_PHASE                 = 3;
 ```
 
-### event flow 
+### event flow
 
 DOM 事件在傳遞時，會從根節點 Window 開始往下傳遞到 target，target 就是你所點擊的那個目標，在往下底達到 target 的這一段過程就是 CAPTURE_PHASE。
 
@@ -60,7 +60,7 @@ DOM 事件在傳遞時，會從根節點 Window 開始往下傳遞到 target，t
 ![](https://i.imgur.com/axENqoG.png)
 
 > 先捕獲，再冒泡
-> 
+>
 
 ## 用 addEventListener 的第三個參數決定在哪個階段聆聽事件
 
@@ -70,37 +70,37 @@ addEventListener 其實有第三個參數，true代表把這個 listener 添加�
 
 試著在每一個元素的每一個階段都添加事件：
 
-```javascript=
+```javascript
 const get = (id) => document.getElementById(id);
 const $list = get('list');
 const $list_item = get('list_item');
 const $list_item_link = get('list_item_link');
-  
+
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing', e.eventPhase);
 }, true)
-  
+
 // list 的冒泡
 $list.addEventListener('click', (e) => {
   console.log('list bubbling', e.eventPhase);
 }, false)
-  
+
 // list_item 的捕獲
 $list_item.addEventListener('click', (e) => {
   console.log('list_item capturing', e.eventPhase);
 }, true)
-  
+
 // list_item 的冒泡
 $list_item.addEventListener('click', (e) => {
   console.log('list_item bubbling', e.eventPhase);
 }, false)
-  
+
 // list_item_link 的捕獲
 $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link capturing', e.eventPhase);
 }, true)
-  
+
 // list_item_link 的冒泡
 $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link bubbling', e.eventPhase);
@@ -132,37 +132,37 @@ list bubbling
 
 既然是先捕獲，再冒泡，意思就是無論那些addEventListener的順序怎麼變，輸出的東西應該還是會一樣才對。我們把捕獲跟冒泡的順序對調，看一下輸出結果是否一樣。
 
-```javascript=
+```javascript
 const get = (id) => document.getElementById(id);
 const $list = get('list');
 const $list_item = get('list_item');
 const $list_item_link = get('list_item_link');
-  
+
 // list 的冒泡
 $list.addEventListener('click', (e) => {
   console.log('list bubbling', e.eventPhase);
 }, false)
-  
+
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing', e.eventPhase);
 }, true)
-  
+
 // list_item 的冒泡
 $list_item.addEventListener('click', (e) => {
   console.log('list_item bubbling', e.eventPhase);
 }, false)
-  
+
 // list_item 的捕獲
 $list_item.addEventListener('click', (e) => {
   console.log('list_item capturing', e.eventPhase);
 }, true)
-  
+
 // list_item_link 的冒泡
 $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link bubbling', e.eventPhase);
 }, false)
-  
+
 // list_item_link 的捕獲
 $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link capturing', e.eventPhase);
@@ -194,7 +194,7 @@ list_item_link 居然先執行冒泡階段的 listener，才執行捕獲階段�
 
 ## 取消事件傳遞 `e.stopPropagation`
 
-```javascript=
+```javascript
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing', e.eventPhase);
@@ -217,13 +217,13 @@ list capturing
 
 例如：
 
-```javascript=
+```javascript
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing');
   e.stopPropagation();
 }, true)
-  
+
 // list 的捕獲 2
 $list.addEventListener('click', (e) => {
   console.log('list capturing2');
@@ -239,13 +239,13 @@ list capturing2
 
 要阻止同一層級的 listener 要使用 e.stopImmediatePropagation();
 
-```javascript=
+```javascript
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing');
   e.stopImmediatePropagation();
 }, true)
-  
+
 // list 的捕獲 2
 $list.addEventListener('click', (e) => {
   console.log('list capturing2');
@@ -264,7 +264,7 @@ e.preventDefault 是取消瀏覽器的預設行為，跟取消事件傳遞沒有
 
 常見的應用是阻止超連結：
 
-```javascript=
+```javascript
 // list_item_link 的冒泡
 $list_item_link.addEventListener('click', (e) => {
   e.preventDefault();
@@ -279,13 +279,13 @@ $list_item_link.addEventListener('click', (e) => {
 
 W3C 文件寫到：
 > Once preventDefault has been called it will remain in effect throughout the remainder of the event's propagation.
-> 
+>
 
 白話文就是，一旦使用了 preventDefault，他會跟事件一起傳遞下去，所以依 event flow 後面的所有事件都會有 preventDefault 的效果。
 
 假使我們在 `#list` 的捕獲事件裡面就先寫了 `e.preventDefault()：`
 
-```javascript=
+```javascript
 // list 的捕獲
 $list.addEventListener('click', (e) => {
   console.log('list capturing', e.eventPhase);
@@ -301,7 +301,7 @@ $list.addEventListener('click', (e) => {
 
 但我們剛剛已經知道，任何點擊 li 的事件其實都會傳到 ul 身上，因此我們可以在 ul 身上掛一個 listener 就好。
 
-```htmlmixed=
+```
 
   <ul id="list">
     <li data-index="1">1</li>
@@ -321,7 +321,7 @@ $list.addEventListener('click', (e) => {
 
 ### 應用：停用所有元件
 
-```javascript=
+```javascript
 window.addEventListener('click', (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -332,7 +332,7 @@ window.addEventListener('click', (e) => {
 
 ### 應用：偵測點擊目標
 
-```javascript=
+```javascript
 window.addEventListener('click', (e) => {
   console.log(e.target);
 }, true)

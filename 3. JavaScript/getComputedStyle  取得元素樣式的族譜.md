@@ -10,7 +10,7 @@ jQuery 的CSS()方法，其底層運作就應用了 getComputedStyle 以及 getP
 
 > getComputedStyle() gives the final used values of all the CSS properties of an element.
 
-```javascript=
+```javascript
 var style = window.getComputedStyle("元素", "偽類");
 
 var dom = document.getElementById("test"),
@@ -24,19 +24,19 @@ getComputedStyle 返回的是樣式聲明對象, 包含了元素所有的樣式�
 
 如何獲取到想要的屬性值呢? 有兩種方法:
 
-```javascript=
+```javascript
 // 1. window.getPropertyValue()
 window.getComputedStyle(element, null).getPropertyValue('屬性名');
 //// 需要注意: 不支持駝峰命名, 屬性名按照 css 的寫法, 如background-color:
 window.getComputedStyle(element, null).getPropertyValue('background-color');
 
 // 2. 鍵值訪問
-// 
+//
 window.getComputedStyle(element, null).float //錯誤!
 
 // 錯誤原因是 float 是 js 的一個保留字, 不能直接使用。
 // IE 下對應的是styleFloat,
-// Firefox, Chorme, Safari 下是 cssFloat. 
+// Firefox, Chorme, Safari 下是 cssFloat.
 // 相較而言更建議使用 getPropertyValue 來獲取具體屬性值.
 ```
 
@@ -56,7 +56,7 @@ HTMLElement 指的就是用 document.getElementById 或 getElementsByTagName 取
 1. 獲取的對象範圍
     `getComputedStyle`方法獲取的是最終應用在元素上的所有 CSS 屬性對象（即使沒有 CSS 代碼，也會把默認的祖宗八代都顯示出來）；
     而`element.style`只能獲取元素style屬性中的 CSS 樣式。因此對於一個光禿禿的元素`<p>`，getComputedStyle方法返回對象中length屬性值（如果有）就是190+(據我測試 FF:192, IE9:195, Chrome:253, 不同環境結果可能有差異), 而element.style就是0
-    
+
 ## IE 上的使用
 
 IE 上有自己的方法，如 currentStyle, getPropertyValue, getAttribute...之類的。
@@ -67,7 +67,7 @@ IE 上有自己的方法，如 currentStyle, getPropertyValue, getAttribute...�
 
 實際上，本文一直沒有深入展開getComputedStyle方法一個很重要的，類似css()方法沒有的功能——獲取偽類元素樣式。但從這一點上將，熟悉getComputedStyle方法有必要。
 
-```htmlmixed=
+```
 <style>
  h3::after {
    content: 'rocks!';
@@ -80,7 +80,7 @@ IE 上有自己的方法，如 currentStyle, getPropertyValue, getAttribute...�
   console.log(result); // returns 'rocks!'
 </script>
 ```
-    
+
 ## 資料來源與參考
 
 https://juejin.im/entry/5884f1a2128fe10065e436a8
