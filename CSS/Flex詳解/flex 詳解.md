@@ -4,7 +4,7 @@ flex用於在 RWD或行動版網頁中實現更便利的佈局方式，不再侷
 
 ## flex容器設定
 
-```css
+```
 .flex-container{
   display: flex;
 }
