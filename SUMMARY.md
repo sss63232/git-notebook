@@ -1,16 +1,16 @@
 # Your Book Title
 
-- 00. Problem
-  * [addEventListner_的_this_綁定問題](00. Problem/addEventListner_的_this_綁定問題.md)
-  * [Phaser Load Images From External URL](00. Problem/Phaser_load_images_from_external_URL.md)
-  * [Web RTC Can T Get Private IP On Safari](00. Problem/WebRTC_can't_get_private_IP_on_Safari.md)
-- 00. Temp
-  * [前端學習資源](00. Temp/前端學習資源.md)
-  * [移動端_touch_事件與_click_事件](00. Temp/移動端_touch_事件與_click_事件.md)
+- 00._Problem
+  * [addEventListner_的_this_綁定問題](00._Problem/addEventListner_的_this_綁定問題.md)
+  * [Phaser Load Images From External URL](00._Problem/Phaser_load_images_from_external_URL.md)
+  * [Web RTC Can T Get Private IP On Safari](00._Problem/WebRTC_can't_get_private_IP_on_Safari.md)
+- 00._Temp
+  * [前端學習資源](00._Temp/前端學習資源.md)
+  * [移動端_touch_事件與_click_事件](00._Temp/移動端_touch_事件與_click_事件.md)
 - Browser Stuffs
-  * [Building The DOM Fast Preload](browser stuffs/Building_the_DOM_fast,_preload.md)
-  * [DOM Content Loaded Vs Load](browser stuffs/DOMContentLoaded_vs_Load.md)
-  * [favicon初探](browser stuffs/favicon初探.md)
+  * [Building The DOM Fast Preload](browser_stuffs/Building_the_DOM_fast,_preload.md)
+  * [DOM Content Loaded Vs Load](browser_stuffs/DOMContentLoaded_vs_Load.md)
+  * [favicon初探](browser_stuffs/favicon初探.md)
 - CI CD
   - Webpack
     * [Webpack Full Example](CI_CD/webpack/webpack_full_example.md)
@@ -18,25 +18,22 @@
   * [使用Gulp 實現LiveReload + SCSS開發環境](CI_CD/使用gulp-實現LiveReload-scss開發環境.md)
 - CSS
   - [background完全攻略](CSS/background完全攻略/background完全攻略.md)
-  - BEM 命名規範
-    * [CSS BEM](CSS/BEM 命名規範/CSS_BEM.md)
-  - Block Formatting Context
-    * [Block Formatting Context](CSS/Block Formatting Context/Block_Formatting_Context.md)
+  - BEM_命名規範
+    * [CSS BEM](CSS/BEM_命名規範/CSS_BEM.md)
+  - [Block Formatting Context](CSS/Block_Formatting_Context/Block_Formatting_Context.md)
   - [Bootstrap](CSS/Bootstrap/bootstrap.md)
     * [bootstrap置中](CSS/Bootstrap/bootstrap置中.md)
     * [Responsive Design With Bootstrap Fluid Containers](CSS/Bootstrap/Responsive_Design_with_Bootstrap_Fluid_Containers.md)
   - box-shadow說明
     * [Box Shadow](CSS/box-shadow說明/box-shadow.md)
-  - CSS Grid
-    * [CSS Grid](CSS/CSS Grid/CSS_Grid.md)
+  - [CSS Grid](CSS/CSS_Grid/CSS_Grid.md)
   - CSS Selectors Attribute Selectors
-    * [CSS Selectors Attribute Selectors](CSS/CSS selectors, Attribute Selectors/CSS_selectors(Attribute_Selectors).md)
+    * [CSS Selectors Attribute Selectors](CSS/CSS_selectors,_Attribute_Selectors/CSS_selectors(Attribute_Selectors).md)
   - Flex詳解
     * [flex_詳解](CSS/Flex詳解/flex_詳解.md)
   - Float
     * [float_詳解](CSS/float/float_詳解.md)
-  - Object Fit Object Position
-    * [Object Fit Object Position](CSS/object-fit object-position/object-fit_object-position.md)
+  - [Object Fit Object Position](CSS/object-fit_object-position/object-fit_object-position.md)
   - [OOCSS](CSS/OOCSS/OOCSS.md)
   - Position
     * [absolute_詳解](CSS/Position/absolute_詳解.md)
@@ -66,20 +63,20 @@
   * [必須熟記的css selector](CSS/必須熟記的css-selector.md)
   * [用_CSS_隱藏_DOM_元素的幾種方法](CSS/用_CSS_隱藏_DOM_元素的幾種方法.md)
 - Design Pattern
-  * [extends_與_implements](Design Pattern/extends_與_implements.md)
-  * [IoC（控制反轉）_DI（相依性注入）](Design Pattern/IoC（控制反轉）_DI（相依性注入）.md)
-  * [Observer](Design Pattern/Observer.md)
-  * [Prototype](Design Pattern/Prototype.md)
-  * [Pure MVC](Design Pattern/pureMVC.md)
-  * [Singleton](Design Pattern/Singleton.md)
+  * [extends_與_implements](Design_Pattern/extends_與_implements.md)
+  * [IoC（控制反轉）_DI（相依性注入）](Design_Pattern/IoC（控制反轉）_DI（相依性注入）.md)
+  * [Observer](Design_Pattern/Observer.md)
+  * [Prototype](Design_Pattern/Prototype.md)
+  * [Pure MVC](Design_Pattern/pureMVC.md)
+  * [Singleton](Design_Pattern/Singleton.md)
 - [Git](Git/git.md)
-  - Git 放棄修改
-    * [Git_放棄修改](Git/Git 放棄修改/Git_放棄修改.md)
+  - [Git_放棄修改](Git/Git_放棄修改/Git_放棄修改.md)
   - Pro Git
     - 2.2 Git 基礎 - 紀錄變更到版本庫中
       * [2.2_Git_基礎_-_紀錄變更到版本庫中](Git/ProGit/2.2 Git 基礎 - 紀錄變更到版本庫中/2.2_Git_基礎_-_紀錄變更到版本庫中.md)
   * [Git Flow](Git/git_flow.md)
   * [Git Merge No Ff](Git/git_merge_--no-ff.md)
+  * [Git](Git/git.md)
   * [Working,_Staging_and_Repository_和_超精簡_Vim](Git/Working,_Staging_and_Repository_和_超精簡_Vim.md)
   * [五種狀態間的撤銷操作](Git/五種狀態間的撤銷操作.md)
   * [回復版本_git_reset、checkout、revert](Git/回復版本_git_reset、checkout、revert.md)
@@ -87,9 +84,9 @@
   * [建立專案及_gh-pages](Git/建立專案及_gh-pages.md)
   * [手動_git_flow](Git/手動_git_flow.md)
 - Hexo
-  - 使用 Hexo 的正確姿勢
-    * [Hexo_3_在文章中插入圖片](Hexo/使用 Hexo 的正確姿勢/Hexo_3_在文章中插入圖片.md)
-    * [Hexo_的_categories,_tag](Hexo/使用 Hexo 的正確姿勢/Hexo_的_categories,_tag.md)
+  - 使用_Hexo_的正確姿勢
+    * [Hexo_3_在文章中插入圖片](Hexo/使用_Hexo_的正確姿勢/Hexo_3_在文章中插入圖片.md)
+    * [Hexo_的_categories,_tag](Hexo/使用_Hexo_的正確姿勢/Hexo_的_categories,_tag.md)
   * [Hexo3 在文章中插入圖片](Hexo/Hexo3-在文章中插入圖片.md)
   * [hexo備份與轉移](Hexo/hexo備份與轉移.md)
   * [hexo寫新文章並發佈到github pages](Hexo/hexo寫新文章並發佈到github-pages.md)
@@ -113,40 +110,35 @@
     * [ES6_解構賦值](JavaScript/ES6/ES6_解構賦值.md)
     * [ES6_變數](JavaScript/ES6/ES6_變數.md)
     * [箭頭函數_arrow_function](JavaScript/ES6/箭頭函數_arrow_function.md)
-  - for..in 與 for...of
-    * [for..in_與_for...of](JavaScript/for..in 與 for...of/for..in_與_for...of.md)
+  - [for..in_與_for...of](JavaScript/for..in_與_for...of/for..in_與_for...of.md)
   - Java Script Weird Part
-    * [1.執行環境與詞彙環境](JavaScript/JavaScript Weird Part/1.執行環境與詞彙環境.md)
-    * [2._型別與運算子](JavaScript/JavaScript Weird Part/2._型別與運算子.md)
-    * [3.1._物件與函數](JavaScript/JavaScript Weird Part/3.1._物件與函數.md)
-    * [3.2._物件與函數_IIFE_closure](JavaScript/JavaScript Weird Part/3.2._物件與函數_IIFE_closure.md)
-    * [3.3._物件與函數_functional_programming](JavaScript/JavaScript Weird Part/3.3._物件與函數_functional_programming.md)
-    * [4.1._JS_的物件導向與原型繼承_prototype](JavaScript/JavaScript Weird Part/4.1._JS_的物件導向與原型繼承_prototype.md)
-    * [5.1._建立物件_new與建構子_Object.create_ES6中的class](JavaScript/JavaScript Weird Part/5.1._建立物件_new與建構子_Object.create_ES6中的class.md)
-  - JavaScript 瀏覽器物件模型
-    * [Scree Object](JavaScript/JavaScript 瀏覽器物件模型/scree_object.md)
-    * [Window Object](JavaScript/JavaScript 瀏覽器物件模型/window_object.md)
-  - JavaScript 物件屬性描述器 PropertyDescriptor
-    * [JavaScript_物件屬性描述器_PropertyDescriptor](JavaScript/JavaScript 物件屬性描述器 PropertyDescriptor/JavaScript_物件屬性描述器_PropertyDescriptor.md)
+    * [1.執行環境與詞彙環境](JavaScript/JavaScript_Weird_Part/1.執行環境與詞彙環境.md)
+    * [2._型別與運算子](JavaScript/JavaScript_Weird_Part/2._型別與運算子.md)
+    * [3.1._物件與函數](JavaScript/JavaScript_Weird_Part/3.1._物件與函數.md)
+    * [3.2._物件與函數_IIFE_closure](JavaScript/JavaScript_Weird_Part/3.2._物件與函數_IIFE_closure.md)
+    * [3.3._物件與函數_functional_programming](JavaScript/JavaScript_Weird_Part/3.3._物件與函數_functional_programming.md)
+    * [4.1._JS_的物件導向與原型繼承_prototype](JavaScript/JavaScript_Weird_Part/4.1._JS_的物件導向與原型繼承_prototype.md)
+    * [5.1._建立物件_new與建構子_Object.create_ES6中的class](JavaScript/JavaScript_Weird_Part/5.1._建立物件_new與建構子_Object.create_ES6中的class.md)
+  - JavaScript_瀏覽器物件模型
+    * [Scree Object](JavaScript/JavaScript_瀏覽器物件模型/scree_object.md)
+    * [Window Object](JavaScript/JavaScript_瀏覽器物件模型/window_object.md)
+  - [JavaScript_物件屬性描述器_PropertyDescriptor](JavaScript/JavaScript_物件屬性描述器_PropertyDescriptor/JavaScript_物件屬性描述器_PropertyDescriptor.md)
   - Learning Algorithms In Java Script From Scratch
-    * [Big_O_Notation,_Time_Complexity_衡量程式碼效率](JavaScript/Learning Algorithms in JavaScript from Scratch/Big_O_Notation,_Time_Complexity_衡量程式碼效率.md)
-    * [Binary Search](JavaScript/Learning Algorithms in JavaScript from Scratch/Binary_Search.md)
-    * [Caesar Cipher](JavaScript/Learning Algorithms in JavaScript from Scratch/Caesar_Cipher.md)
-    * [Fibonacci](JavaScript/Learning Algorithms in JavaScript from Scratch/Fibonacci.md)
-    * [Fizz Buzz](JavaScript/Learning Algorithms in JavaScript from Scratch/Fizz_Buzz.md)
-    * [Harmless_Ransom_Note_計算特定字串出現次數](JavaScript/Learning Algorithms in JavaScript from Scratch/Harmless_Ransom_Note_計算特定字串出現次數.md)
-    * [Is Palindrome](JavaScript/Learning Algorithms in JavaScript from Scratch/IsPalindrome.md)
-    * [Max Stock Profit](JavaScript/Learning Algorithms in JavaScript from Scratch/Max_Stock_Profit.md)
-    * [Mean Median Mode](JavaScript/Learning Algorithms in JavaScript from Scratch/Mean_Median_Mode.md)
-    * [Reverse Array In Place](JavaScript/Learning Algorithms in JavaScript from Scratch/Reverse_Array_In_Place.md)
-    * [Reverse Words](JavaScript/Learning Algorithms in JavaScript from Scratch/Reverse_Words.md)
-    * [Sieve Of Eratosthenes](JavaScript/Learning Algorithms in JavaScript from Scratch/Sieve_of_Eratosthenes.md)
-  - Na N Is Na N
-    * [Na N Is Na N](JavaScript/NaN, isNaN/NaN,_isNaN.md)
-  - npm 輔助工具 npm-check
-    * [npm_輔助工具_npm-check](JavaScript/npm 輔助工具 npm-check/npm_輔助工具_npm-check.md)
-  - Promise, javascript 執行順序
-    * [Promise,_javascript_執行順序](JavaScript/Promise, javascript 執行順序/Promise,_javascript_執行順序.md)
+    * [Big_O_Notation,_Time_Complexity_衡量程式碼效率](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Big_O_Notation,_Time_Complexity_衡量程式碼效率.md)
+    * [Binary Search](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Binary_Search.md)
+    * [Caesar Cipher](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Caesar_Cipher.md)
+    * [Fibonacci](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Fibonacci.md)
+    * [Fizz Buzz](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Fizz_Buzz.md)
+    * [Harmless_Ransom_Note_計算特定字串出現次數](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Harmless_Ransom_Note_計算特定字串出現次數.md)
+    * [Is Palindrome](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/IsPalindrome.md)
+    * [Max Stock Profit](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Max_Stock_Profit.md)
+    * [Mean Median Mode](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Mean_Median_Mode.md)
+    * [Reverse Array In Place](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Reverse_Array_In_Place.md)
+    * [Reverse Words](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Reverse_Words.md)
+    * [Sieve Of Eratosthenes](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Sieve_of_Eratosthenes.md)
+  - [Na N Is Na N](JavaScript/NaN,_isNaN/NaN,_isNaN.md)
+  - [npm_輔助工具_npm-check](JavaScript/npm_輔助工具_npm-check/npm_輔助工具_npm-check.md)
+  - [Promise,_javascript_執行順序](JavaScript/Promise,_javascript_執行順序/Promise,_javascript_執行順序.md)
   - [遍歷物件](JavaScript/遍歷物件/遍歷物件.md)
   * [audiosprite_with_howler.js](JavaScript/audiosprite_with_howler.js.md)
   * [console_基本種類與用法](JavaScript/console_基本種類與用法.md)
@@ -181,8 +173,8 @@
   * [用_getEventListerner_查看_EventListener](JavaScript/用_getEventListerner_查看_EventListener.md)
   * [閉包,_Closure,_in_JavaScript](JavaScript/閉包,_Closure,_in_JavaScript.md)
 - Linux
-  - Ubuntu 壓縮, 解壓縮
-    * [Ubuntu_壓縮,_解壓縮](Linux/Ubuntu 壓縮, 解壓縮/Ubuntu_壓縮,_解壓縮.md)
+  - Ubuntu壓縮解壓縮
+    * [Ubuntu_壓縮,_解壓縮](Linux/Ubuntu壓縮解壓縮/Ubuntu_壓縮,_解壓縮.md)
   * [Ubuntu_利用_imwheel_加快滾輪速度](Linux/Ubuntu_利用_imwheel_加快滾輪速度.md)
   * [Ubuntu_安裝_Nodejs,_Yarn](Linux/Ubuntu_安裝_Nodejs,_Yarn.md)
   * [Ubuntu_安裝後](Linux/Ubuntu_安裝後.md)
@@ -217,19 +209,18 @@
   * [圖解DNS](Others/圖解DNS.md)
   * [網頁中嵌入程式碼](Others/網頁中嵌入程式碼.md)
 - 通訊傳輸
-  - HTTP Cache 機制
-    * [HTTP_Cache_機制](通訊傳輸/HTTP Cache 機制/HTTP_Cache_機制.md)
+  - HTTPCache機制
+    * [HTTP_Cache_機制](通訊傳輸/HTTPCache機制/HTTP_Cache_機制.md)
   * [瀏覽器同源政策及其規避方法](通訊傳輸/瀏覽器同源政策及其規避方法.md)
 - 開發環境與工具
-  - JS 專案 with eslint, prettier
-    * [JS_專案_with_eslint,_prettier](開發環境與工具/JS 專案 with eslint, prettier/JS_專案_with_eslint,_prettier.md)
+  - JS_專案_with_eslint_prettier
+    * [JS_專案_with_eslint,_prettier](開發環境與工具/JS_專案_with_eslint_prettier/JS_專案_with_eslint,_prettier.md)
   - Npm
     * [！！！--save-dev_詳細解釋](開發環境與工具/npm/！！！--save-dev_詳細解釋.md)
     * [Bower簡單入門](開發環境與工具/npm/bower.md)
     * [npm_基本教學](開發環境與工具/npm/npm_基本教學.md)
     * [npm 缺陷，路徑太長的解決方法](開發環境與工具/npm/npm-缺陷，路徑太長的解決方法.md)
-  - vs code 技巧
-    * [vs_code_技巧](開發環境與工具/vs code 技巧/vs_code_技巧.md)
+  - [vs_code_技巧](開發環境與工具/vs_code_技巧/vs_code_技巧.md)
   - Webpack
     * [Webpack Manifest File](開發環境與工具/webpack/webpack_manifest_file.md)
   * [atom 與sublime3 使用技巧筆記](開發環境與工具/atom-與sublime3-使用技巧筆記.md)
