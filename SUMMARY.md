@@ -72,8 +72,8 @@
 - [Git](Git/git.md)
   - [Git_放棄修改](Git/Git_放棄修改/Git_放棄修改.md)
   - Pro Git
-    - 2.2 Git 基礎 - 紀錄變更到版本庫中
-      * [2.2_Git_基礎_-_紀錄變更到版本庫中](Git/ProGit/2.2 Git 基礎 - 紀錄變更到版本庫中/2.2_Git_基礎_-_紀錄變更到版本庫中.md)
+    - 2.2_Git_基礎_紀錄變更到版本庫中
+      * [2.2_Git_基礎_-_紀錄變更到版本庫中](Git/ProGit/2.2_Git_基礎_紀錄變更到版本庫中/2.2_Git_基礎_-_紀錄變更到版本庫中.md)
   * [Git Flow](Git/git_flow.md)
   * [Git Merge No Ff](Git/git_merge_--no-ff.md)
   * [Git](Git/git.md)
