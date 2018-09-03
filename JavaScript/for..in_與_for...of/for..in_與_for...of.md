@@ -19,7 +19,7 @@ let aArray = [
 ];
 ```
 
-![52358859069](C:\Users\newtchen.JUMBO\Documents\git-notebook\3. JavaScript\for..in 與 for...of\1523588590697.png)
+![](https://i.imgur.com/IAzjaJR.png)
 
 看好像好像只是寫法不一樣而已，那為什麼說`for...of`修復了`for...in`的缺陷和不足?
 
@@ -27,6 +27,6 @@ let aArray = [
 
 假設我們往數組添加 `aArray.name = 'demo'`, 再分別查看上面寫的兩個循環：
 
-![52358892266](C:\Users\NEWTCH~1.JUM\AppData\Local\Temp\1523588922666.png)
+![](https://i.imgur.com/daAWeTK.png)
 
-作用於數組的`for-in`循環除了遍曆數組元素以外, 還會遍歷自定義屬性。
+作用於 Array 的`for-in`循環除了遍曆 Array 元素以外, 還會遍歷自定義屬性。

@@ -31,7 +31,7 @@ console.log(Player.prototype.constructor === Player) //true
 
 那麼，`Player.prototype`的`__proto__`指向哪裡？`Player.prototype`本身也是個物件，它指向的就是所有 JavaScript 中最上層的物件起源，也就是`Object.prototype`。由此也可推知，`Function.prototype`也同樣指向`Object.prototype`。以下面的程式就可以看到這個結果:
 
-```
+```javascript
 function Player() { }
 
 console.log(Player.__proto__)

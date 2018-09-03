@@ -49,7 +49,7 @@ console.log('--------');
 
  output:
 
-![1531979763201](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/JavaScript 物件屬性描述器 PropertyDescriptor/1531979763201.png)
+![](https://i.imgur.com/dfKvshi.png)
 
 #### 每次取得的物件都是不同的
 
@@ -108,7 +108,7 @@ Object.defineProperty(obj, `a`, {
     value: `this is property a`,
 });
 
-// 一次改都個屬性
+// 一次改多個屬性
 Object.defineProperties(obj, {
     b: {
         configurable: false,
@@ -130,7 +130,9 @@ console.log('--------');
 
 output:
 
-![1531983316520](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/JavaScript 物件屬性描述器 PropertyDescriptor/1531983316520.png)
+![](https://i.imgur.com/7M8ZzUf.png)
+
+![1531983316520](1531983316520.png)
 
 ## References
 

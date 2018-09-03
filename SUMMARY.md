@@ -11,6 +11,7 @@
   * [Building The DOM Fast Preload](browser_stuffs/Building_the_DOM_fast,_preload.md)
   * [DOM Content Loaded Vs Load](browser_stuffs/DOMContentLoaded_vs_Load.md)
   * [favicon初探](browser_stuffs/favicon初探.md)
+  * [瀏覽器第一次渲染過程](browser_stuffs/瀏覽器第一次渲染過程.md)
 - CI CD
   - Webpack
     * [Webpack Full Example](CI_CD/webpack/webpack_full_example.md)
@@ -122,7 +123,6 @@
   - JavaScript_瀏覽器物件模型
     * [Scree Object](JavaScript/JavaScript_瀏覽器物件模型/scree_object.md)
     * [Window Object](JavaScript/JavaScript_瀏覽器物件模型/window_object.md)
-  - [JavaScript_物件屬性描述器_PropertyDescriptor](JavaScript/JavaScript_物件屬性描述器_PropertyDescriptor/JavaScript_物件屬性描述器_PropertyDescriptor.md)
   - Learning Algorithms In Java Script From Scratch
     * [Big_O_Notation,_Time_Complexity_衡量程式碼效率](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Big_O_Notation,_Time_Complexity_衡量程式碼效率.md)
     * [Binary Search](JavaScript/Learning_Algorithms_in_JavaScript_from_Scratch/Binary_Search.md)
@@ -139,6 +139,8 @@
   - [Na N Is Na N](JavaScript/NaN,_isNaN/NaN,_isNaN.md)
   - [npm_輔助工具_npm-check](JavaScript/npm_輔助工具_npm-check/npm_輔助工具_npm-check.md)
   - [Promise,_javascript_執行順序](JavaScript/Promise,_javascript_執行順序/Promise,_javascript_執行順序.md)
+  - 物件屬性描述器_PropertyDescriptor
+    * [JavaScript_物件屬性描述器_PropertyDescriptor](JavaScript/物件屬性描述器_PropertyDescriptor/JavaScript_物件屬性描述器_PropertyDescriptor.md)
   - [遍歷物件](JavaScript/遍歷物件/遍歷物件.md)
   * [audiosprite_with_howler.js](JavaScript/audiosprite_with_howler.js.md)
   * [console_基本種類與用法](JavaScript/console_基本種類與用法.md)
@@ -165,13 +167,13 @@
   * [Scope](JavaScript/Scope.md)
   * [This](JavaScript/this.md)
   * [Undefined](JavaScript/undefined.md)
-  * [函式也是物件的一種,_functions_are_object](JavaScript/函式也是物件的一種,_functions_are_object.md)
-  * [函式的參數-傳值或傳址,_by_value_or_by_reference](JavaScript/函式的參數-傳值或傳址,_by_value_or_by_reference.md)
-  * [原型,_prototype,_物件導向](JavaScript/原型,_prototype,_物件導向.md)
+  * [傳值_or_傳址](JavaScript/傳值_or_傳址.md)
+  * [函式也是物件的一種](JavaScript/函式也是物件的一種.md)
+  * [原型 (prototype) 物件導向](JavaScript/原型 (prototype) 物件導向.md)
   * [瀏覽器元素座標與尺寸](JavaScript/瀏覽器元素座標與尺寸.md)
   * [物件導向_JavaScript_建立物件](JavaScript/物件導向_JavaScript_建立物件.md)
   * [用_getEventListerner_查看_EventListener](JavaScript/用_getEventListerner_查看_EventListener.md)
-  * [閉包,_Closure,_in_JavaScript](JavaScript/閉包,_Closure,_in_JavaScript.md)
+  * [閉包_Closure_in_JavaScript](JavaScript/閉包_Closure_in_JavaScript.md)
 - Linux
   - Ubuntu壓縮解壓縮
     * [Ubuntu_壓縮,_解壓縮](Linux/Ubuntu壓縮解壓縮/Ubuntu_壓縮,_解壓縮.md)
@@ -183,6 +185,7 @@
   * [Ubuntu 安裝 Node.js, Yarn](Linux/Ubuntu-安裝-Node-js-Yarn.md)
   * [VS Code 使用 zsh 當作 terminal](Linux/VS-Code-使用-zsh-當作-terminal.md)
   * [同一顆硬碟裝完_Win10_裝_Ubuntu](Linux/同一顆硬碟裝完_Win10_裝_Ubuntu.md)
+  * [螢幕擷取工具_Shutter](Linux/螢幕擷取工具_Shutter.md)
 - Others
   - Django
     * [Django_學習資源](Others/Django/Django_學習資源.md)

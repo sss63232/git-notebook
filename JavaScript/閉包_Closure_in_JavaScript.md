@@ -4,13 +4,13 @@
 
 > 運作原理：就是呼叫 Function 內的 Function
 
-閉包是一個屬於函數特殊的執行環境 (scope; context)，這「封閉」的環境中保存 (record) 了讓函數可以持續 (甚至在 function 被 return 後) 存取的獨立自由變數 (free variable)。
+閉包是一個屬於函數特殊的執行環境 (scope; context)，這「封閉」的環境中保存 (record) 了讓函數可以持續 (甚至在 function 執行 return 後) 存取的獨立自由變數 (free variable)。
 
 換句話說，closure 是讓函數能「記得」被建立時的環境的一種機制。
 
 ## 作用域說明
 
-JavaScrip 的變量作用域有兩個：**全局變量**與**局部變量**
+JavaScript 的變量作用域有兩個：**全局變量**與**局部變量**
 
 作用域說明 example:
 
@@ -93,15 +93,46 @@ console.log(JayCost(1000)); // 8000
 console.log(JayCost(1000)); // 7000
 ```
 
+## 閉包應用:模塊
+
+比較典型的閉包應用就是 "定義模塊"，我們將操作函數暴露給外部，而細節隱藏在模塊內部：
+
+```javascript
+function module() {
+	var arr = [];
+	function add(val) {
+		if (typeof val == 'number') arr.push(val);
+	}
+	function get(index) {
+		if (index < arr.length) {
+			return arr[index]
+		} else {
+			return null;
+		}
+	}
+	return {
+		add: add,
+		get: get
+	}
+}
+var mod1 = module();
+mod1.add(1);
+mod1.add(2);
+mod1.add('xxx');
+console.log(mod1.get(2));
+```
+
 
 
 
 ## 資料來源與參考
 [JavaScript Function Closure (閉包)](http://www.fooish.com/javascript/function-closure.html)
 
-[閉包(Closure)的基本概念]x(http://www.victsao.com/blog/81-javascript/301-javascript-function-closure)
+[閉包(Closure)的基本概念](http://www.victsao.com/blog/81-javascript/301-javascript-function-closure)
 
 https://ithelp.ithome.com.tw/articles/10191515
+
+[闭包详解一 - 掘金](https://juejin.im/post/5b081f8d6fb9a07a9b3664b6)
 
 
 
