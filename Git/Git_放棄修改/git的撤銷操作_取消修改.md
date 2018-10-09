@@ -24,9 +24,6 @@ git diff xx/xx.py xx/xx2.py
 ```
 
 ```shell
-# 撤銷項目下所有的修改
-git checkout 
-
 # 撤銷當前文件夾下所有的修改
 git checkout . 
 
