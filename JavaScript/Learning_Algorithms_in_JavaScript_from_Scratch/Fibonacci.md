@@ -41,6 +41,32 @@ function fibonacci(position) {
 fibonacci(6);
 ```
 
+## Another Solution
+
+**特別指出** ：[0](https://www.wikiwand.com/zh-tw/0) 不是第一項，而是第零項。
+
+```javascript
+  const fibonacci = idx => (idx === 0 || idx === 1)
+    ? idx
+    : fibonacci(idx - 1) + fibonacci(idx - 2)
+
+  console.log('--------')
+  console.log(fibonacci(0))
+  console.log(fibonacci(1))
+  console.log(fibonacci(2))
+  console.log(fibonacci(3))
+  console.log(fibonacci(4))
+  console.log(fibonacci(5))
+  console.log(fibonacci(6))
+  console.log(fibonacci(7))
+  console.log(fibonacci(8))
+  console.log(fibonacci(9))
+  console.log('--------')
+  // result 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+```
+
+
+
 ## Fibonacci with Memorization
 
 ### 單純的 Fibonacci 函數屬於 O(n^2)
@@ -126,6 +152,27 @@ output:
 Fibonacci with Memorization 這種函式的演算法是屬於 O(n)，
 運算的時間會只會以線性成長，
 效率方面的表現優秀
+
+
+
+## Another Memorization Solution
+
+```javascript
+  const fiboWithMemorize = idx => {
+    const results = []
+    return (idx => {
+      if (results[idx]) {
+        return results[idx]
+      }
+
+      return (idx === 0 || idx === 1)
+        ? idx
+        : fiboWithMemorize(idx - 1) + fiboWithMemorize(idx - 2)
+    })(idx)
+  }
+```
+
+
 
 ## References
 

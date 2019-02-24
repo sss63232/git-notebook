@@ -53,6 +53,43 @@ console.log(
 console.log('--------');
 ```
 
+## Another Solution
+
+```javascript
+  const harmlessRansomNote = (noteTxt, magazineTxt) => {
+    const magazineTxtHashTable = magazineTxt
+      .split(' ')
+      .reduce((acc, cur) => {
+        acc[cur] === undefined
+          ? acc[cur] = 1
+          : acc[cur]++
+
+        return acc
+      }, {})
+    const splitedNoteTxt = noteTxt.split(' ')
+    for (let i = 0; i < splitedNoteTxt.length; i++) {
+      const noteFragment = splitedNoteTxt[i]
+      if (magazineTxtHashTable[noteFragment] > 0) {
+        magazineTxtHashTable[noteFragment]--
+      } else {
+        return false
+      }
+    }
+
+    return true
+  }
+  console.log('--------')
+  console.log(
+    harmlessRansomNote(
+      `this is for`,
+      `this is a testing article for testing`
+    )
+  )
+  console.log('--------')
+```
+
+
+
 ## Time Complexity
 
 `O(n)+O(m)`

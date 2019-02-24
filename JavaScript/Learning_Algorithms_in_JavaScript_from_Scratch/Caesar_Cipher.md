@@ -1,6 +1,6 @@
 # Caesar Cipher 凱撒密碼
 
-## concept
+## Concept
 
 ```javascript
 // return a new string
@@ -28,7 +28,7 @@ e 向後三位變 h
 
 
 
-## example code
+## Solution code
 
 ```javascript
 const caesarCipher = (str, num) => {
@@ -82,6 +82,61 @@ console.log(caesarCipher('Bee!!', -28));
 最需要注意的就是大小寫判斷的地方，
 因為我們的 alphabet 陣列為了方便，
 只有列出小寫的字母。
+
+
+
+## Another Solution
+
+```javascript
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  
+  const getShiftedIndex = (charIndex, shiftDigit) => {
+    if (charIndex === null) { return null }
+    const shiftedIndex = (charIndex + shiftDigit) % 26
+    return shiftedIndex < 0
+      ? shiftedIndex + 26
+      : shiftedIndex
+  }
+
+  const getCharSpec = char => {
+    const charToLowerCase = char.toLowerCase()
+    const indexInAlphabet = alphabet.indexOf(charToLowerCase)
+    const isInAlphabet = indexInAlphabet !== -1
+    const isCapital = isInAlphabet && char === charToLowerCase.toUpperCase()
+    return {
+      isCapital,
+      originalValue: char,
+      charIndex: isInAlphabet
+        ? indexInAlphabet
+        : null
+
+    }
+  }
+
+  const caesarCipher = (originalString, shiftDigit) => originalString
+    .split('')
+    .map(char => getCharSpec(char))
+    .map(({ charIndex, ...others }) => ({
+      ...others,
+      shiftedIndex: getShiftedIndex(charIndex, shiftDigit)
+    }))
+    .map(({ originalValue, isCapital, shiftedIndex }) => {
+      if (shiftedIndex === null) {
+        return originalValue
+      }
+      const shiftedChar = alphabet[shiftedIndex]
+      return isCapital
+        ? shiftedChar.toUpperCase()
+        : shiftedChar
+    })
+    .join('')
+
+  console.log(caesarCipher('A*-*BcDe', 25)) // Z*-*AbCd
+  console.log(caesarCipher('apple', 2)) // crrng
+  console.log(caesarCipher('Bee!!', -28)) // Zcc!!
+```
+
+
 
 ## Code from `Learning Algorithms`
 

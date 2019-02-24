@@ -6,7 +6,7 @@
 輸出 1~ num，
 但是遇到 3 的倍數時輸出 `Fizz`，
 遇到 5 的倍數時輸出 `Buzz`，
-遇到紀事 3 又是 5 的倍數時輸出 `FizzBuzz`
+遇到既是 3 又是 5 的倍數時輸出 `FizzBuzz`
 
 ## modulus operator
 
