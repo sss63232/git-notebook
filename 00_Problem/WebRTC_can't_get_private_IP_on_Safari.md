@@ -1,6 +1,6 @@
-# WebRTC can't get private IP on Safari
+# Get IP through WebRTC
 
-## Safari 以外的 get private IP 方法
+## get private IP 方法(Safari 不適用)
 
 ```javascript
 getPrivateIP() {
