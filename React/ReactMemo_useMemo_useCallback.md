@@ -1,6 +1,4 @@
-## github
-[sss63232/avoid_react_re-rendering](https://github.com/sss63232/avoid_react_re-rendering)
-
+# avoid_react_re-rendering
 
 ## Example Component: Counter
 
@@ -47,9 +45,31 @@ const Counter = () => {
 
 ## React.memo
 
+在使用 Function Component 的狀況下，  
+想要有 `PureComponent` 的效果，
+最直接的方法就是在外面套上 `React.memo()`
+
+```jsx
+const Title = props => {
+    ...
+}
+
+const ReactMemoTitle = React.memo(Title)
+```
+
+此時的 `ReactMemoTitle` 就具有 `PureComponent` 的特性，  
+在 `props` 沒有變動的情況下不會 re-render
+
+// 插入 github 程式碼
+
+// 插入影片
+
 ## useMemo
 
 ## useCallback
 
 ## references
 [React | 關於 Component 效能優化的那件小事 - StarBugs Weekly 技術專欄 - Medium](https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6)
+
+## github
+[sss63232/avoid_react_re-rendering](https://github.com/sss63232/avoid_react_re-rendering)
