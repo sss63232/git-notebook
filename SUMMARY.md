@@ -1,18 +1,18 @@
 # Your Book Title
 
-- 00._Problem
-  * [addEventListner_的_this_綁定問題](00._Problem/addEventListner_的_this_綁定問題.md)
-  * [Phaser Load Images From External URL](00._Problem/Phaser_load_images_from_external_URL.md)
-  * [Web RTC Can T Get Private IP On Safari](00._Problem/WebRTC_can't_get_private_IP_on_Safari.md)
-- 00._Temp
-  * [前端學習資源](00._Temp/前端學習資源.md)
-  * [移動端_touch_事件與_click_事件](00._Temp/移動端_touch_事件與_click_事件.md)
+- 00 Problem
+  * [Phaser Load Images From External URL](00_Problem/Phaser_load_images_from_external_URL.md)
+  * [Web RTC Can T Get Private IP On Safari](00_Problem/WebRTC_can't_get_private_IP_on_Safari.md)
+- 00 Temp
+  * [前端學習資源](00_Temp/前端學習資源.md)
+  * [移動端_touch_事件與_click_事件](00_Temp/移動端_touch_事件與_click_事件.md)
 - Browser Stuffs
   * [Building The DOM Fast Preload](browser_stuffs/Building_the_DOM_fast,_preload.md)
   * [DOM Content Loaded Vs Load](browser_stuffs/DOMContentLoaded_vs_Load.md)
   * [favicon初探](browser_stuffs/favicon初探.md)
   * [瀏覽器第一次渲染過程](browser_stuffs/瀏覽器第一次渲染過程.md)
 - CI CD
+  - [Jest](CI_CD/Jest/Jest.md)
   - Webpack
     * [Webpack Full Example](CI_CD/webpack/webpack_full_example.md)
   * [gulp 入門](CI_CD/gulp-入門.md)
@@ -70,17 +70,20 @@
   * [Prototype](Design_Pattern/Prototype.md)
   * [Pure MVC](Design_Pattern/pureMVC.md)
   * [Singleton](Design_Pattern/Singleton.md)
-- [Git](Git/git.md)
+- [Gatsby](Gatsby/Gatsby.md)
+- Git
   - [Git_放棄修改](Git/Git_放棄修改/Git_放棄修改.md)
+    * [git的撤銷操作_取消修改](Git/Git_放棄修改/git的撤銷操作_取消修改.md)
   - Pro Git
     - 2.2_Git_基礎_紀錄變更到版本庫中
       * [2.2_Git_基礎_-_紀錄變更到版本庫中](Git/ProGit/2.2_Git_基礎_紀錄變更到版本庫中/2.2_Git_基礎_-_紀錄變更到版本庫中.md)
   * [Git Flow](Git/git_flow.md)
   * [Git Merge No Ff](Git/git_merge_--no-ff.md)
-  * [Git](Git/git.md)
+  * [Git Merge Vs Rebase](Git/Git_merge_vs_rebase.md)
+  * [Git Stash](Git/git_stash.md)
+  * [Github Pull Request](Git/Github_Pull_Request.md)
   * [Working,_Staging_and_Repository_和_超精簡_Vim](Git/Working,_Staging_and_Repository_和_超精簡_Vim.md)
-  * [五種狀態間的撤銷操作](Git/五種狀態間的撤銷操作.md)
-  * [回復版本_git_reset、checkout、revert](Git/回復版本_git_reset、checkout、revert.md)
+  * [回復版本_git_reset_checkout_revert](Git/回復版本_git_reset_checkout_revert.md)
   * [將_code_推到_gh-pages](Git/將_code_推到_gh-pages.md)
   * [建立專案及_gh-pages](Git/建立專案及_gh-pages.md)
   * [手動_git_flow](Git/手動_git_flow.md)
@@ -186,6 +189,9 @@
   * [VS Code 使用 zsh 當作 terminal](Linux/VS-Code-使用-zsh-當作-terminal.md)
   * [同一顆硬碟裝完_Win10_裝_Ubuntu](Linux/同一顆硬碟裝完_Win10_裝_Ubuntu.md)
   * [螢幕擷取工具_Shutter](Linux/螢幕擷取工具_Shutter.md)
+- Mac OS
+  * [macOS 允許任何來源 APP](macOS/macOS 允許任何來源 APP.md)
+  * [macOS＿快速鍵](macOS/macOS＿快速鍵.md)
 - Others
   - Django
     * [Django_學習資源](Others/Django/Django_學習資源.md)
@@ -211,9 +217,16 @@
   * [使用github SSH key省去Deploy時需要輸入帳密](Others/使用github-SSH-key省去Deploy時需要輸入帳密.md)
   * [圖解DNS](Others/圖解DNS.md)
   * [網頁中嵌入程式碼](Others/網頁中嵌入程式碼.md)
+- React
+  * [React Memo Use Memo Use Callback](React/ReactMemo_useMemo_useCallback.md)
+  * [Redux](React/Redux.md)
+- React Redux
+  * [css_module_global用法](React_Redux/css_module_global用法.md)
+  * [React_概念](React_Redux/React_概念.md)
 - 通訊傳輸
   - HTTPCache機制
     * [HTTP_Cache_機制](通訊傳輸/HTTPCache機制/HTTP_Cache_機制.md)
+  - [TCP UDP](通訊傳輸/TCP_UDP/TCP_UDP.md)
   * [瀏覽器同源政策及其規避方法](通訊傳輸/瀏覽器同源政策及其規避方法.md)
 - 開發環境與工具
   - JS_專案_with_eslint_prettier
@@ -230,3 +243,4 @@
   * [browser-sync_使用](開發環境與工具/browser-sync_使用.md)
   * [cVim筆記，用鍵盤操控chrome](開發環境與工具/cVim筆記，用鍵盤操控chrome.md)
   * [Emmet 快速小範例](開發環境與工具/Emmet-快速小範例.md)
+  * [VSCode_使用_zsh](開發環境與工具/VSCode_使用_zsh.md)
