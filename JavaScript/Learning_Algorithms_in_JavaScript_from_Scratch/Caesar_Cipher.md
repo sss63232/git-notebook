@@ -23,7 +23,7 @@ B 向後三位變 E
 e 向後三位變 h 
 以此類推...
 
-![1531899604263](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1531899604263.png)
+![1531899604263](./1531899604263.png)
 圖片來源：https://www.wikiwand.com/zh-tw/%E5%87%B1%E6%92%92%E5%AF%86%E7%A2%BC
 
 
@@ -167,6 +167,14 @@ function caesarCipher(str,num) {
 }
 caesarCipher('Zoo Keeper', 2);
 ```
+
+<iframe
+     src="https://codesandbox.io/embed/stoic-fire-fh82m?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="caesarCipher"
+     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+   ></iframe>
 
 
 

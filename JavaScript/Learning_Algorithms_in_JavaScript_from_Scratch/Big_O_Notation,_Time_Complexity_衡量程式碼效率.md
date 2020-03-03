@@ -118,4 +118,4 @@ console.log(binarySearch(arr2, 3))
 
 ## illustration
 
-![1531755698666](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1531755698666.png)
+![1531755698666](./1531755698666.png)

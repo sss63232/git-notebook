@@ -147,7 +147,7 @@ console.log('--------');
 
 output:
 
-![1532185393345](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1532185393345.png)
+![1532185393345](./1532185393345.png)
 
 Fibonacci with Memorization 這種函式的演算法是屬於 O(n)，
 運算的時間會只會以線性成長，

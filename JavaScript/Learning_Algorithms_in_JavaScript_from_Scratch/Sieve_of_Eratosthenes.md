@@ -18,7 +18,7 @@ function sieveOfEratosthenes(num){
 - 合數 (composite number)：指在大於 1 的自然數中，因數除了 1 和其本身外具有另一因數的正整數。
 - 0 和 1 既不是質數也不是合數。
 
-![1532252982130](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1532252982130.png)
+![1532252982130](./1532252982130.png)
 
 ## Solution Code
 

@@ -1,4 +1,4 @@
-# Fizz Buzz 
+# Fizz Buzz
 
 ## concept
 
@@ -17,7 +17,7 @@ console.log(100 % 30);
 console.log('------------------------------------');
 ```
 
-![1531711223536](/home/newtchen/Documents/MyWorks/git-notebook/3. JavaScript/Learning Algorithms in JavaScript from Scratch/1531711223536.png)
+![1531711223536](./1531711223536.png)
 
 ## example code
 
@@ -35,4 +35,12 @@ const fizzbuzz = num => {
 
 fizzbuzz(20);
 ```
+
+<iframe
+     src="https://codesandbox.io/embed/jovial-violet-5ztqd?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="fizzbuzz"
+     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+   ></iframe>
 
