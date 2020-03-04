@@ -10,7 +10,7 @@ console.log(a);
 var a = "hello world";
 
 function b(){
-    console.log("called b);
+    console.log("Called b);
 }
 ```
 
@@ -29,3 +29,47 @@ hoisting 在JavaScript中，它會把定義的變項移到最前面先執行。
 > JavaScript Declarations are Hoisted  
 > JavaScript Initializations are Not Hoisted
 
+## ECMAScript 規範
+
+### Execution Contexts
+
+Execution Contexts（簡稱 EC），  
+每當你進入一個 function 的時候，就會產生一個 EC，  
+裡面儲存跟這個 function 有關的一些資訊，  
+並且把這個 EC 放到 stack 裡面，  
+當 function 執行完以後，  
+就會把 EC 給 pop 出來。
+
+![image-20200304091934212](image-20200304091934212.png)
+
+### Variable Object
+
+每個 EC 都會有相對應的 variable object（以下簡稱 VO），  
+在裡面宣告的變數跟函式都會被加進 VO 裡面，  
+如果是 function，那參數也會被加到 VO 裡。
+
+### EC 準備 VO 階段
+
+當我們在進入一個 EC 的時候（可以想像成是在執行 function 後的瞬間，在還沒開始跑 function 實際程式碼之前），會按照順序做以下三件事：
+
+1. 把參數放到 VO 裡面並設定好值，傳什麼進來就是什麼，沒有值的設成 undefined
+2. 把 function 宣告放到 VO 裡，**如果已經有同名的就覆蓋掉**
+3. 把變數宣告放到 VO 裡，**如果已經有同名的則忽略**
+
+所以
+
+```javascript
+function test(v, a){
+  function a(){}
+  console.log(v) // 10
+  console.log(a) // function ...
+  
+  var v = 3
+  console.log(v) // 3
+}
+test(10, 100)
+```
+
+## References
+
+[我知道你懂 hoisting，可是你瞭解到多深？ · Issue #34 · aszx87410/blog](https://github.com/aszx87410/blog/issues/34) 
