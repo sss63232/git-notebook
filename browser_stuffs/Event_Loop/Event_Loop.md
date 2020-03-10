@@ -46,3 +46,7 @@
 - Node端，microtask 在事件循環的各個階段之間執行
 - 瀏覽器端，microtask 在事件循環的 macrotask 執行完之後執行
 
+## References
+
+\* [✨♻️ JavaScript Visualized: Event Loop - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif) 
+
