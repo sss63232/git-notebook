@@ -48,5 +48,6 @@
 
 ## References
 
-\* [✨♻️ JavaScript Visualized: Event Loop - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif) 
+ [✨♻️ JavaScript Visualized: Event Loop - DEV Community 👩‍💻👨‍💻](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif) 
 
+[從瀏覽器多進程到JS單線程，JS運行機制最全面的一次梳理 - 掘金](https://juejin.im/post/5a6547d0f265da3e283a1df7)

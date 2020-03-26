@@ -1,13 +1,15 @@
 # Client-side/Server-side Rendering
 
-簡單來說，  
-就是將資料與 HTML 之間的整合放在  Server 做還是瀏覽器做。  
+資料與 HTML 之間的整合放在  Server 做還是瀏覽器做。  
 
-要注意的，  
-現在前端在討論 CSR/SSR 時常常只著重在首屏載入的部分，  
-因為依目前盛行的 Single Page Application 的架構，  
-網站後續的變化通常都會是由前端 Rounter 來處理，  
-也就是 Client-side Rendering。
+現代前端在討論 CSR/SSR 時只著重在**首屏載入**的部分，  
+因為依目前盛行的 Single Page Application 架構，  
+網站後續的變化都會由前端 Router 來處理，  
+
+也就是說，  
+只有第一次請求 HTML 的時候會分使用 CSR 還是 SSR，  
+瀏覽器在獲得 HTML 檔後，  
+後面的操作都會是 CSR。
 
 ## Server-side Rendering
 
